@@ -1,12 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="app bg-1">
+    <Navbar class="fixed-top mt-3" />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div class="container">
+      <router-view />
+    </div>
+    <Footer />
+  </div>
 </template>
 
-<style>
+<script>
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
+export default {
+  name: "App",
+  components: {
+    Navbar,
+    Footer,
+  },
+};
+</script>
+
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,5 +41,11 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.bg-1 {
+  width: 100%;
+  height: 700px;
+  background-image: url("@/assets/bg-1.jpg");
 }
 </style>
