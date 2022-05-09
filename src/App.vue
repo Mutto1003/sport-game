@@ -1,11 +1,12 @@
 <template>
   <div class="app bg-1">
     <Navbar class="fixed-top mt-3" />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <div class="container">
       <router-view />
     </div>
-    <Footer />
+    <Footer class="mt-5" />
   </div>
 </template>
 
