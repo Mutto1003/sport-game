@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container w-80">
     <nav class="navbar navbar-expand-md bg-green rd">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active text-center">
@@ -18,8 +18,14 @@
           <a class="nav-link mx-5 text-white" href="#">แฟนเพจ</a>
         </li>
         <li class="nav-item active text-center">
-          <a class="nav-link mx-5 text-white" href="#">บริการลูกค้า</a>
-        </li>        
+          <a
+            class="nav-link mx-5 text-white"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo"            
+            >เข้าสู่ระบบ</a
+          >
+        </li>
       </ul>
     </nav>
   </div>
