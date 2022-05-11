@@ -1,13 +1,13 @@
 <template>
   <div class="app bg-1">
     <Navbar class="fixed-top mt-3" />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    <NavigationBar />
+    <Carousel />    
     <div class="container">
       <router-view />
     </div>
     <Footer class="mt-5" />
-
     <div
       class="modal fade"
       id="exampleModal"
@@ -18,10 +18,13 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header d-flex justify-content-center">
-            <h5 class="modal-title text-center" id="exampleModalLabel">
-              เข้าสู่ระบบ
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title text-center" id="app">เข้าสู่ระบบ</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             <form>
@@ -30,7 +33,7 @@
                   type="text"
                   class="form-control rounded-input"
                   placeholder="ชื่อผู้ใช้"
-                  id="recipient-name"
+                  id="app"
                 />
               </div>
               <div class="mb-5 mt-3">
@@ -38,12 +41,14 @@
                   type="text"
                   class="form-control rounded-input"
                   placeholder="รหัสผ่าน"
-                  id="recipient-name"
+                  id="app"
                 />
               </div>
 
-              <div class="d-flex justify-content-center" >
-                <button type="button" class="btn btn-login">เข้าสู่ระบบ</button>
+              <div class="d-flex justify-content-center">
+                <button id="app" type="button" class="btn btn-login">
+                  เข้าสู่ระบบ
+                </button>
                 <!-- <button type="button" class="btn" data-bs-dismiss="modal">
                   ปิด
                 </button> -->
@@ -59,21 +64,26 @@
 <script>
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
+import Carousel from "@/components/Carousel.vue";
 export default {
   name: "App",
   components: {
     Navbar,
     Footer,
+    NavigationBar,
+    Carousel,
   },
 };
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap");
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "IBM Plex Sans Thai", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 
@@ -93,7 +103,7 @@ nav a.router-link-exact-active {
 .bg-1 {
   width: 100%;
   height: 700px;
-  background-image: url("@/assets/bg-1.jpg");
+  background-image: url("@/assets/bg-3.jpg");
 }
 
 .rounded-input {
@@ -126,4 +136,5 @@ nav a.router-link-exact-active {
   font-weight: 600;
   border: 0;
 }
+
 </style>
