@@ -5,7 +5,9 @@
     <NavigationBar />
     <Carousel />    
     <div class="container">
-      <router-view />
+      <RouterView class="view main-content w-full order-2"></RouterView>
+    <RouterView name="LeftSidebar" class="view order-1 w-full"></RouterView>
+    <RouterView name="RightSidebar" class="view order-3 w-full"></RouterView>
     </div>
     <Footer class="mt-5" />
     <div
