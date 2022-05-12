@@ -1,6 +1,6 @@
 <template>
   <div class="app bg-1">
-    <Navbar class="fixed-top mt-3" />
+    <Header class="fixed-top mt-3" />
     <br /><br /><br /><br /><br /><br />    
     <Carousel />    
     <Content />
@@ -59,17 +59,19 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
+// import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
+import Header from "@/components/Header.vue";
 import Carousel from "@/components/Carousel.vue";
 import Content from "@/components/Content.vue";
 export default {
   name: "App",
   components: {
-    Navbar,
+    // Navbar,
     Footer,   
     Carousel,
-    Content
+    Content,
+    Header
   },
 };
 </script>
