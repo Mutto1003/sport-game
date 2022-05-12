@@ -59,15 +59,13 @@
 </template>
 
 <script>
-// import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
 import Header from "@/components/Header.vue";
 import Carousel from "@/components/Carousel.vue";
 import Content from "@/components/Content.vue";
 export default {
   name: "App",
-  components: {
-    // Navbar,
+  components: { 
     Footer,   
     Carousel,
     Content,

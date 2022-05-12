@@ -1,63 +1,42 @@
 <template>
-  <div>
-    <section class="deneb_cta">
+  <div class="footer-dark">
+    <footer>
       <div class="container">
-        <div class="cta_wrapper">
-          <div class="row align-items-center">
-            <div class="col-lg-7">
-              <div class="cta_content">
-                <h3>Have Any Project in Mind ?</h3>
-                <p>
-                  Curabitur libero eros, efficitur sit amet sodales tincidunt,
-                  aliquet et leo sed ut nibh feugiat, auctor enim quis.
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-5">
-              <div class="button_box">
-                <a href="#" class="btn btn-warning">Hire Us</a>
-              </div>
-            </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-3 item">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Web design</a></li>
+              <li><a href="#">Development</a></li>
+              <li><a href="#">Hosting</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3 item">
+            <h3>About</h3>
+            <ul>
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 item text">
+            <h3>Company Name</h3>
+            <p>
+              Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus
+              ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique
+              lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.
+            </p>
+          </div>
+          <div class="col item social">
+            <a href="#"><i class="icon ion-social-facebook"></i></a
+            ><a href="#"><i class="icon ion-social-twitter"></i></a
+            ><a href="#"><i class="icon ion-social-snapchat"></i></a
+            ><a href="#"><i class="icon ion-social-instagram"></i></a>
           </div>
         </div>
+        <p class="copyright">Company Name © 2018</p>
       </div>
-    </section>
-    <footer class="deneb_footer">
-      <div
-        class="widget_wrapper"
-        style="
-          background-image: url(http://demo.tortoizthemes.com/deneb-html/deneb-ltr/assets/images/footer_bg.png);
-        "
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
-              <div class="widget widegt_about">
-                <div class="widget_title">
-                  <img
-                    src=""
-                    class="img-fluid"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div> 
-          </div>
-        </div>
-      </div>
-      <div class="copyright_area">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="copyright_text">
-                <p>Copyright &copy; 2020 All rights reserved.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>   
-
+    </footer>
   </div>
 </template>
 
@@ -66,190 +45,95 @@ export default {};
 </script>
 
 <style scoped>
-body {
-  margin-top: 20px;
-}
-.deneb_footer .widget_wrapper {
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 200px;
-  padding-bottom: 70px;
-}
-@media (max-width: 767px) {
-  .deneb_footer .widget_wrapper .widget {
-    margin-bottom: 40px;
-  }
-}
-.deneb_footer .widget_wrapper .widget .widget_title {
-  margin-bottom: 30px;
-}
-.deneb_footer .widget_wrapper .widget .widget_title h4 {
-  font-weight: bold;
-}
-.deneb_footer .widget_wrapper .widget .widget_title h4:after {
-  content: "";
-  display: block;
-  background: url("") no-repeat;
-  max-width: 38px;
-  height: 2px;
-  margin-top: 5px;
-}
-.deneb_footer .widget_wrapper .widegt_about p {
-  margin-bottom: 20px;
-}
-.deneb_footer .widget_wrapper .widegt_about .social li {
-  display: inline-block;
-  margin-right: 10px;
-}
-.deneb_footer .widget_wrapper .widegt_about .social li a {
-  display: block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 50%;
-  background-color: #f9e6d4;
-  color: #fba543;
-  font-size: 14px;
-  -webkit-transition: all all 0.5s ease-out 0s;
-  -moz-transition: all all 0.5s ease-out 0s;
-  -ms-transition: all all 0.5s ease-out 0s;
-  -o-transition: all all 0.5s ease-out 0s;
-  transition: all all 0.5s ease-out 0s;
-}
-.deneb_footer .widget_wrapper .widegt_about .social li a:hover,
-.deneb_footer .widget_wrapper .widegt_about .social li a:focus {
-  background-image: -moz-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
-  background-image: -webkit-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
-  background-image: -ms-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
-  color: #fff;
-  box-shadow: 2.5px 4.33px 15px 0px rgba(254, 176, 0, 0.4);
-}
-.deneb_footer .widget_wrapper .widget_link ul li {
-  margin-bottom: 5px;
-}
-.deneb_footer .widget_wrapper .widget_link ul li a {
-  text-transform: capitalize;
-  color: #7a808d;
-}
-.deneb_footer .widget_wrapper .widget_link ul li a:hover,
-.deneb_footer .widget_wrapper .widget_link ul li a:focus {
-  color: #feb000;
-}
-.deneb_footer .widget_wrapper .widget_contact .contact_info .single_info {
-  max-width: 250px;
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-.deneb_footer .widget_wrapper .widget_contact .contact_info .single_info .icon {
-  font-size: 12px;
-  color: #feb000;
-  margin-right: 10px;
-}
-.deneb_footer
-  .widget_wrapper
-  .widget_contact
-  .contact_info
-  .single_info
-  .info
-  p
-  a {
-  color: #7a808d;
-}
-.deneb_footer
-  .widget_wrapper
-  .widget_contact
-  .contact_info
-  .single_info
-  .info
-  p
-  span {
-  display: block;
+.footer-dark {
+  padding:50px 0;
+  color:#f0f9ff;
+  background-color:#282d32;
 }
 
-.deneb_footer .copyright_area {
-  background: #edecf0;
-  padding: 10px 0;
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
 }
-.deneb_footer .copyright_area .copyright_text {
-  text-align: center;
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
 }
-.deneb_footer .copyright_area .copyright_text p {
-  color: #011a3e;
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
 }
-.deneb_footer .copyright_area .copyright_text p span {
-  color: #feb000;
+
+.footer-dark ul a:hover {
+  opacity:0.8;
 }
-.deneb_cta .cta_wrapper {
-  padding: 45px 50px 42px;
-  max-width: 970px;
-  border-radius: 15px;
-  margin: auto;
-  margin-bottom: -135px;
-  position: relative;
-  background-color: #011a3e;
-  box-shadow: 2.5px 4.33px 15px 0px rgba(80, 0, 254, 0.4);
-  z-index: 1;
-}
-.deneb_cta .cta_wrapper:after {
-  content: "";
-  background: url("") no-repeat;
-  background-position: bottom;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-}
-.deneb_cta .cta_wrapper .cta_content h3 {
-  color: #fff;
-  font-weight: bold;
-}
-@media (max-width: 767px) {
-  .deneb_cta .cta_wrapper .cta_content h3 {
-    font-size: 24px;
+
+@media (max-width:767px) {
+  .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px;
   }
 }
-.deneb_cta .cta_wrapper .cta_content h3:after {
-  content: "";
-  display: block;
-  background: url("") no-repeat;
-  max-width: 110px;
-  height: 2px;
-  margin-top: 13px;
-  margin-bottom: 24px;
+
+.footer-dark .item.text {
+  margin-bottom:36px;
 }
-.deneb_cta .cta_wrapper .cta_content p {
-  color: #fff;
-}
-.deneb_cta .cta_wrapper .button_box {
-  float: right;
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .deneb_cta .cta_wrapper .button_box {
-    float: none;
-    text-align: left;
-    margin-top: 30px;
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
   }
 }
-@media (max-width: 767px) {
-  .deneb_cta .cta_wrapper .button_box {
-    float: none;
-    text-align: center;
-    margin-top: 30px;
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px;
   }
 }
-.deneb_cta .cta_wrapper .button_box .deneb_btn {
-  background: #fff;
-  color: #011a3e;
+
+.footer-dark .item.social > a {
+  font-size:20px;
+  width:36px;
+  height:36px;
+  line-height:36px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+  margin:0 8px;
+  color:#fff;
+  opacity:0.75;
 }
-.deneb_cta .cta_wrapper .button_box .deneb_btn:hover,
-.deneb_cta .cta_wrapper .button_box .deneb_btn:focus {
-  box-shadow: 2.5px 4.33px 15px 0px rgba(0, 0, 0, 0.15);
+
+.footer-dark .item.social > a:hover {
+  opacity:0.9;
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
 }
 
 /*  */
-
 </style>
