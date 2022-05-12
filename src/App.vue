@@ -3,9 +3,7 @@
     <Navbar class="fixed-top mt-3" />
     <br /><br /><br /><br /><br /><br />    
     <Carousel />    
-    <div class="container">
-      <router-view />
-    </div>
+    <Content />
     <Footer class="mt-5" />
     <div
       class="modal fade"
@@ -64,12 +62,14 @@
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
 import Carousel from "@/components/Carousel.vue";
+import Content from "@/components/Content.vue";
 export default {
   name: "App",
   components: {
     Navbar,
     Footer,   
     Carousel,
+    Content
   },
 };
 </script>
