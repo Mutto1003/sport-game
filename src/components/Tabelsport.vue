@@ -1,5 +1,5 @@
 <template>
-  <div class="container">    
+  <div class="">    
     <ul class="responsive-table">
       <li class="table-header">
         <div class="col col-1 font-t">เวลา</div>
