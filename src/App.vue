@@ -1,8 +1,7 @@
 <template>
   <div class="app bg-1">
     <Navbar class="fixed-top mt-3" />
-    <br /><br /><br /><br /><br /><br />
-    <NavigationBar />
+    <br /><br /><br /><br /><br /><br />   
     <Carousel />    
     <div class="container">
       <RouterView class="view main-content w-full order-2"></RouterView>
@@ -66,14 +65,12 @@
 <script>
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
-import NavigationBar from "@/components/NavigationBar.vue";
 import Carousel from "@/components/Carousel.vue";
 export default {
   name: "App",
   components: {
     Navbar,
-    Footer,
-    NavigationBar,
+    Footer,   
     Carousel,
   },
 };
