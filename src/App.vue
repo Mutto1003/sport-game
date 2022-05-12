@@ -1,12 +1,10 @@
 <template>
   <div class="app bg-1">
     <Navbar class="fixed-top mt-3" />
-    <br /><br /><br /><br /><br /><br />   
+    <br /><br /><br /><br /><br /><br />    
     <Carousel />    
     <div class="container">
-      <RouterView class="view main-content w-full order-2"></RouterView>
-    <RouterView name="LeftSidebar" class="view order-1 w-full"></RouterView>
-    <RouterView name="RightSidebar" class="view order-3 w-full"></RouterView>
+      <router-view />
     </div>
     <Footer class="mt-5" />
     <div
