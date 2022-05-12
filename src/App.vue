@@ -1,9 +1,8 @@
 <template>
-  <div class="app bg-1">
-    <Header class="fixed-top mt-3" />
-    <br /><br /><br /><br /><br /><br />    
-    <Carousel />    
-    <Content />
+  <div class="app">
+    <Header class="fixed-top mt-3 mb-5" />      
+    <Carousel class="mt-5"/>    
+    <Content class="mt-5"/>
     <Footer class="mt-5" />
     <div
       class="modal fade"
@@ -43,7 +42,7 @@
               </div>
 
               <div class="d-flex justify-content-center">
-                <button id="app" type="button" class="btn btn-login">
+                <button @click="$router.push('/sport')" id="app" type="button" class="btn btn-login">
                   เข้าสู่ระบบ
                 </button>
                 <!-- <button type="button" class="btn" data-bs-dismiss="modal">
