@@ -3,26 +3,26 @@
     <nav class="navbar navbar-expand-md bg-green rd">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">หน้าแรก</a>
+          <a class="nav-link mx-5 text-white" href="#">หน้าแรก</a>
         </li>
         <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">ข่าวสาร</a>
+          <a class="nav-link mx-5 text-white" href="#">ข่าวสาร</a>
         </li>
         <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">ข้อมูลเกม</a>
+          <a class="nav-link mx-5 text-white" href="#">ข้อมูลเกม</a>
         </li>
         <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">เติมเงิน</a>
+          <a class="nav-link mx-5 text-white" href="#">เติมเงิน</a>
         </li>
         <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">แฟนเพจ</a>
+          <a class="nav-link mx-5 text-white" href="#">แฟนเพจ</a>
         </li>
         <li class="nav-item active text-center">
           <a
-            class="nav-link mx-5 font-t"
+            class="nav-link mx-5 text-white"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
-            data-bs-whatever="@mdo"
+            data-bs-whatever="@mdo"            
             >เข้าสู่ระบบ</a
           >
         </li>
@@ -36,14 +36,6 @@ export default {};
 </script>
 
 <style scoped>
-.font-t {
-  font-family: "IBM Plex Sans Thai", sans-serif;
-  -webkit-text-stroke-width: 1px;
-  /* -webkit-text-stroke-color: black; */
-  /* text-align: center; */
-  border: #000;
-  color: #ffffff;
-}
 .bg-green {
   background-color: #f2bd3a;
   box-shadow: 2.5px 4.33px 15px 0px rgba(80, 0, 254, 0.4);
