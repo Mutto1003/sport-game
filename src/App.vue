@@ -1,8 +1,8 @@
 <template>
   <div class="app">
-    <Header class="fixed-top mt-3 mb-5" />      
-    <Carousel class="mt-5"/>    
-    <Content class="mt-5"/>
+    <Header class="fixed-top mt-3 mb-5" />
+    <Carousel class="mt-5" />
+    <Content class="mt-5" />
     <Footer class="mt-5" />
     <div
       class="modal fade"
@@ -42,7 +42,14 @@
               </div>
 
               <div class="d-flex justify-content-center">
-                <button @click="$router.push('/sport')" id="app" type="button" class="btn btn-login">
+                <button
+                  @click="$router.push('/sport')"
+                  id="app"
+                  type="button"
+                  class="btn btn-login"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                >
                   เข้าสู่ระบบ
                 </button>
                 <!-- <button type="button" class="btn" data-bs-dismiss="modal">
@@ -64,11 +71,11 @@ import Carousel from "@/components/Carousel.vue";
 import Content from "@/components/Content.vue";
 export default {
   name: "App",
-  components: { 
-    Footer,   
+  components: {
+    Footer,
     Carousel,
     Content,
-    Header
+    Header,
   },
 };
 </script>
@@ -132,5 +139,4 @@ nav a.router-link-exact-active {
   font-weight: 600;
   border: 0;
 }
-
 </style>

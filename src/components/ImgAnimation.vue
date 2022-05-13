@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="avatar">
-      <a href="https://codepen.io/MarioDesigns/">
+      <a href="">
         <img
           src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/751678/skytsunami.png"
           alt="Skytsunami"
