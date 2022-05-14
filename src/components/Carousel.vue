@@ -7,13 +7,13 @@
     >
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="@/assets/bg-5.jpg" class="d-block w-100" alt="..." />
+          <img src="@/assets/banerSPBook.jpg" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
           <img src="@/assets/bg-6.jpg" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="@/assets/bg-5.jpg" class="d-block w-100" alt="..." />
+          <img src="@/assets/banerSPBook.jpg" class="d-block w-100" alt="..." />
         </div>
       </div>
       <button
@@ -46,10 +46,10 @@ export default {
 
 <style scoped>
 .rd {
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .w-100 {
- border-radius: 25px;
+ border-radius: 10px;
   
   /* padding: 3px 3px 3px 3px; */
 }
@@ -57,9 +57,9 @@ export default {
 .box-slider {
   margin: 20px 50px;
   padding: 5px;
-  background: #fff;
-  border-radius: 30px;
-  border: 5px solid #287c06;
+  /* background: #fff; */
+  border-radius: 10px;
+  border: 5px solid #018eef;
   position: relative;
   z-index: 1;
 }

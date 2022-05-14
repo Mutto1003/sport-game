@@ -1,9 +1,12 @@
 <template>
-  <div class="app">
-    <Header class="fixed-top mt-3 mb-5" />
-    <Carousel class="mt-5" />
-    <Content class="mt-5" />
-    <Footer class="mt-5" />
+  <div>
+    <div class="bg-1">
+      <Header class="fixed-top mt-5" />
+      <Carousel class="mt" />
+      <Content class="mt-5" />
+      <Footer class="mt-5" />
+    </div>
+
     <div
       class="modal fade"
       id="exampleModal"
@@ -90,6 +93,10 @@ export default {
   color: #2c3e50;
 }
 
+.mt {
+  margin-top: 150px;
+}
+
 nav {
   padding: 30px;
 }
@@ -105,8 +112,11 @@ nav a.router-link-exact-active {
 
 .bg-1 {
   width: 100%;
-  height: 700px;
-  background-image: url("@/assets/bg-3.jpg");
+  height: 450px;
+  background-image: url("@/assets/bg.jpg");
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .rounded-input {

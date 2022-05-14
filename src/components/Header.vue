@@ -3,27 +3,27 @@
     <nav class="navbar navbar-expand-md bg-green rd">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">หน้าแรก</a>
+          <a class="nav-link mx-5 font-t" href="#">หน้าหลัก</a>
+        </li>        
+        <li class="nav-item active text-center">
+          <a class="nav-link mx-5 font-t" href="#">วิธีการเล่น</a>
         </li>
         <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">ข่าวสาร</a>
+          <a class="nav-link mx-5 font-t" href="#">ติดต่อเรา</a>
         </li>
         <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">ข้อมูลเกม</a>
+          <a class="nav-link mx-5 font-t" href="#">ทางเข้าTexas</a>
         </li>
         <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">เติมเงิน</a>
-        </li>
-        <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">แฟนเพจ</a>
-        </li>
+          <a class="nav-link mx-5 font-t" href="#">ทางเข้า Casino</a>
+        </li>                       
         <li class="nav-item active text-center">
           <a
             class="nav-link mx-5 font-t"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
             data-bs-whatever="@mdo"
-            >เข้าสู่ระบบ</a
+            >โปรโมชั่น</a
           >
         </li>
       </ul>
@@ -42,11 +42,11 @@ export default {};
   /* -webkit-text-stroke-color: black; */
   /* text-align: center; */
   border: #000;
-  color: #ffffff;
+  color: #018eef;
 }
 .bg-green {
-  background-color: #f2bd3a;
-  box-shadow: 2.5px 4.33px 15px 0px rgba(80, 0, 254, 0.4);
+  background-color: #ffffff;
+  box-shadow: 2.5px 4.33px 15px 0px #018eef;
 }
 
 .container-fluid.my-container-fluid {
@@ -54,7 +54,9 @@ export default {};
 }
 
 .rd {
-  border: 2px solid red;
+  /* border: 2px solid #018eef; */
+  border-right: 5px solid #018eef;
+  border-left: 5px solid #018eef;
   padding: 10px;
   border-radius: 40px;
 }
