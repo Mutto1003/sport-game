@@ -56,10 +56,11 @@ export default {
 
 .box-slider {
   margin: 20px 50px;
-  padding: 5px;
+  /* padding: 5px; */
   /* background: #fff; */
   border-radius: 10px;
-  border: 5px solid #018eef;
+  box-shadow: 0px 5px 10px 0px #018eef;
+  border: 2px solid #018eef;
   position: relative;
   z-index: 1;
 }

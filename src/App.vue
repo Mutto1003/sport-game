@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-1">
-      <Header class="fixed-top mt-5" />
+      <Header class="fixed-top" />
       <Carousel class="mt" />
       <Content class="mt-5" />
       <Footer class="mt-5" />

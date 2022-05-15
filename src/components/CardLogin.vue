@@ -64,9 +64,8 @@ export default {};
 
 .card {    
     background-color: #0029b9; 
-    box-shadow: 15 0 15px 4px #0029b9;
-    border-radius: 25px;
-       
+    box-shadow: 0px 5px 10px 0px #018eef;
+    border-radius: 25px;       
 }
 
 .mt{

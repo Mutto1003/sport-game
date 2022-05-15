@@ -1,33 +1,111 @@
 <template>
-  <div class="container w-80">
-    <nav class="navbar navbar-expand-md bg-green rd">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">หน้าหลัก</a>
-        </li>        
-        <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">วิธีการเล่น</a>
-        </li>
-        <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">ติดต่อเรา</a>
-        </li>
-        <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">ทางเข้าTexas</a>
-        </li>
-        <li class="nav-item active text-center">
-          <a class="nav-link mx-5 font-t" href="#">ทางเข้า Casino</a>
-        </li>                       
-        <li class="nav-item active text-center">
+  <div style="height: 70px" class="uk-sticky-placeholder">
+    <div class="uk-sticky-placeholder" style="height: 70px; margin: 0px">
+      <nav style="margin: 0px" class="tm-navbar uk-navbar" data-uk-sticky="">
+        <div class="uk-container uk-container-center">
+          <a class="tm-logo uk-float-left" href="index.html">
+            <img src="@/assets/logo-img.png" alt="logo" title="logo" />
+            <span>Sport<em>.ak</em></span>
+          </a>
+
+          <ul class="uk-navbar-nav uk-hidden-small">
+            <li
+              class="uk-parent uk-active"
+              data-uk-dropdown="{'preventflip':'y'}"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <a href="index.html">Home</a>
+              <div
+                class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1 uk-dropdown-bottom"
+                style="top: 70px; left: 0px"
+              >
+                <div class="uk-grid uk-dropdown-grid">
+                  <div class="uk-width-1-1">
+                    <ul class="uk-nav uk-nav-navbar">
+                      <li>
+                        <a class="yellow-scheme" href="../yellow/index.html"
+                          >Yellow Color Scheme</a
+                        >
+                      </li>
+                      <li>
+                        <a class="blue-scheme" href="../blue/index.html"
+                          >Blue Color Scheme</a
+                        >
+                      </li>
+                      <li>
+                        <a class="red-scheme" href="../red/index.html"
+                          >Red Color Scheme</a
+                        >
+                      </li>
+                      <li><a href="offline.html">Offline Page</a></li>
+                      <li><a href="404.html">Error Page</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              data-uk-dropdown="{'preventflip':'y'}"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class=""
+            >
+              <a href="about.html">About</a>
+            </li>
+            <li
+              class="uk-parent"
+              data-uk-dropdown="{'preventflip':'y'}"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <a href="#">Pages</a>
+              <div
+                class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1 uk-dropdown-bottom"
+                style="top: 70px; left: 0px"
+              >
+                <div class="uk-grid uk-dropdown-grid">
+                  <div class="uk-width-1-1">
+                    <ul class="uk-nav uk-nav-navbar">
+                      <li><a href="players.html">Players</a></li>
+                      <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="uk-parent"
+              data-uk-dropdown="{'preventflip':'y'}"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <a href="match-list.html">Match</a>
+              <div
+                class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1 uk-dropdown-bottom"
+                style="top: 70px; left: 0px"
+              >
+                <div class="uk-grid uk-dropdown-grid">
+                  <div class="uk-width-1-1">
+                    <ul class="uk-nav uk-nav-navbar">
+                      <li><a href="results.html">Results</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="category.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
           <a
-            class="nav-link mx-5 font-t"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-            data-bs-whatever="@mdo"
-            >โปรโมชั่น</a
-          >
-        </li>
-      </ul>
-    </nav>
+            href="#offcanvas"
+            class="uk-navbar-toggle uk-visible-small"
+            data-uk-offcanvas=""
+          ></a>
+        </div>
+      </nav>
+    </div>
   </div>
 </template>
 
@@ -36,28 +114,5 @@ export default {};
 </script>
 
 <style scoped>
-.font-t {
-  font-family: "IBM Plex Sans Thai", sans-serif;
-  -webkit-text-stroke-width: 1px;
-  /* -webkit-text-stroke-color: black; */
-  /* text-align: center; */
-  border: #000;
-  color: #018eef;
-}
-.bg-green {
-  background-color: #ffffff;
-  box-shadow: 2.5px 4.33px 15px 0px #018eef;
-}
-
-.container-fluid.my-container-fluid {
-  justify-content: center;
-}
-
-.rd {
-  /* border: 2px solid #018eef; */
-  border-right: 5px solid #018eef;
-  border-left: 5px solid #018eef;
-  padding: 10px;
-  border-radius: 40px;
-}
+@import "@/css/theme.css"
 </style>
