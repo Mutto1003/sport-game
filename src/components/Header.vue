@@ -15,7 +15,7 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <a href="index.html">Home</a>
+              <a @click="$router.push('/')" href="">Home</a>
               <div
                 class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1 uk-dropdown-bottom"
                 style="top: 70px; left: 0px"
@@ -51,7 +51,7 @@
               aria-expanded="false"
               class=""
             >
-              <a href="about.html">About</a>
+              <a @click="$router.push('/sport')" href="">About</a>
             </li>
             <li
               class="uk-parent"
