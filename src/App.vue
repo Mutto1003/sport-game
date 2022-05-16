@@ -4,7 +4,7 @@
       <Header class="fixed-top" />
       <Carousel class="mt" />
       <Content class="mt-5" />
-      <Footer class="mt-5" />
+      <Footer/>
     </div>
 
     <div
@@ -113,7 +113,7 @@ nav a.router-link-exact-active {
 .bg-1 {
   width: 100%;
   height: 450px;
-  background-image: url("@/assets/bg.jpg");
+  background-image: url("@/assets/main-slider-img.jpg");
   position: absolute;
   top: 0;
   right: 0;
