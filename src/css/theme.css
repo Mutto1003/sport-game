@@ -10616,6 +10616,7 @@ q {
   z-index: 1;
 }
 .va-latest-bottom .read-more {
+  text-decoration: none;
   padding: 0 50px;
   background: #ffc722;
   position: relative;
@@ -10633,7 +10634,7 @@ q {
   background: #363533;
   color: #ffc722;
 }
-.va-latest-bottom .read-more:before {
+.va-latest-bottom .read-more:before { 
   content: '';
   position: absolute;
   top: -3px;
@@ -11563,7 +11564,7 @@ q {
 /**************** FOOTER ****************/
 .bottom-wrapper {
   padding: 90px 0 0 0;
-  background: url("") 50% 50%;
+  background: url("@/assets/bottom-wrapper-bg.jpg") 50% 50%;
   background-size: cover;
 }
 .bottom-wrapper footer {
@@ -11575,6 +11576,7 @@ q {
 .footer-logo a {
   font-size: 38px;
   text-transform: uppercase;
+  text-decoration: none;
   color: #fff;
 }
 .footer-logo a:hover {
@@ -11624,11 +11626,12 @@ q {
 .match-list-item.foot .wrapper > div {
   line-height: 37px;
 }
-.match-list-item.foot .read-more {
+.match-list-item.foot .read-more { 
+  text-decoration: none;
   margin-right: 11px;
   line-height: 37px;
-  /* float: right; */
-  display: inline-block;
+  float: right;  
+  /* display: inline-block; */
   font-size: 12px;
   color: #ffc722;
   font-family: 'Work Sans';
@@ -11718,9 +11721,10 @@ q {
   padding-right: 70px;
   display: inline-block;
 }
-.foot-menu-wrap ul li a {
+.foot-menu-wrap ul li a { 
   font-size: 14px;
   font-family: 'Work Sans';
+  text-decoration: none;
   color: #bababa;
 }
 .foot-menu-wrap ul li a:hover {
@@ -11731,11 +11735,13 @@ q {
   float: right;
   font-size: 14px;
   font-family: 'Work Sans';
+  text-decoration: none;
   color: #787878;
 }
 .copyrights a {
   font-size: 14px;
   font-family: 'Work Sans';
+  text-decoration: none;
   color: #bababa;
 }
 .copyrights a:hover {
