@@ -15555,7 +15555,7 @@ ul.uk-switcher {
   top: 50%;
   left: 50%;
   border-radius: 50%;
-  background: url("") 50% 50% no-repeat #fdbd00;
+  background: url("@/assets/logo-loader.png") 50% 50% no-repeat #fdbd00;
   animation-name: spin;
   animation-duration: 1200ms;
   animation-timing-function: linear;

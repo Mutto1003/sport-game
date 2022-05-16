@@ -1,10 +1,16 @@
 <template>
   <div>
+    <!-- <Loading
+      :active.sync="isLoading"
+      :can-cancel="true"
+      :on-cancel="onCancel"
+      :is-full-page="fullPage"
+    ></Loading> -->
     <div class="bg-1">
       <Header class="fixed-top" />
       <Carousel class="mt" />
       <Content class="mt-5" />
-      <Footer/>
+      <Footer />
     </div>
 
     <div
@@ -68,17 +74,37 @@
 </template>
 
 <script>
+import Loading from "@/components/Loading.vue";
 import Footer from "@/components/Footer.vue";
 import Header from "@/components/Header.vue";
 import Carousel from "@/components/Carousel.vue";
 import Content from "@/components/Content.vue";
 export default {
   name: "App",
+  data() {
+    return {
+      isLoading: false,
+      fullPage: true,
+    };
+  },
   components: {
     Footer,
     Carousel,
     Content,
     Header,
+    Loading,
+  },
+  methods: {
+    doAjax() {
+      this.isLoading = true;
+      // simulate AJAX
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 3000);
+    },
+    onCancel() {
+      console.log("User cancelled the loader.");
+    },
   },
 };
 </script>
