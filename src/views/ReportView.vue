@@ -1,15 +1,11 @@
 <template>
-  <div class="sportbook bg-1">
+  <div class="report">
     <Loading v-if="isLoading"></Loading>
-    <Header v-if="isHeader" class="fixed-top" />
-    <Carousel class="mtc" />
-    <ImgAnimation />
-    <div class="container">
+    <Header v-if="isHeader" class="fixed-top" />   
+    <!-- <Carousel class="mtc" /> -->
+    <div class="container mtc">
       <div class="row mt-5">
-        <div class="col-2">
-          <Menusport />
-        </div>
-        <div class="col-10">
+        <div class="col-12">
           <Tabelsport />
         </div>
       </div>
@@ -30,7 +26,7 @@ import Pagination from "@/components/Pagination.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
-  name: "SportbookView",
+  name: "ReportView",
   data() {
     return {
       isLoading: true,
@@ -64,7 +60,7 @@ export default {
 .bg-1 {
   width: 100%;
   height: 450px;
-  background-image: url("@/assets/main-slider-img.jpg");
+  background-image: url("@/assets/head-bg.jpg");
   position: absolute;
   top: 0;
   right: 0;

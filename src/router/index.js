@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SportbookView from '../views/SportbookView.vue'
+import ReportView from '../views/ReportView.vue'
+import ScoreView from '../views/ScoreView.vue'
 
 const routes = [
   {
@@ -13,6 +15,16 @@ const routes = [
     name: 'sportbook',
     component: SportbookView
   }, 
+  {
+    path: '/report',
+    name: 'report',
+    component: ReportView
+  },
+  {
+    path: '/score',
+    name: 'score',
+    component: ScoreView
+  },
 ]
 
 const router = createRouter({

@@ -631,9 +631,9 @@ export default {
 };
 </script>
 <style scoped>
-/* .mt {
+.mt {
   padding: 90px 0;
-} */
+}
 
 .mtc {
   margin-top: 150px;
