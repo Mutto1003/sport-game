@@ -59,8 +59,8 @@ export default {
   /* padding: 5px; */
   /* background: #fff; */
   border-radius: 10px;
-  box-shadow: 0px 5px 10px 0px #018eef;
-  border: 2px solid #018eef;
+  box-shadow: 0px 5px 10px 0px #f8c631;
+  border: 2px solid #ffc722;
   position: relative;
   z-index: 1;
 }
