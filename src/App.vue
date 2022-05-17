@@ -1,97 +1,24 @@
 <template>
   <div>
     <Loading v-if="isLoading"></Loading>
-    <div class="bg-1">      
-      <Carousel class="mt" />
+    <div class=""> 
       <Content class="mt-5" />     
-    </div>
-
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header d-flex justify-content-center">
-            <h5 class="modal-title text-center" id="app">เข้าสู่ระบบ</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3 mt-3">
-                <input
-                  type="text"
-                  class="form-control rounded-input"
-                  placeholder="ชื่อผู้ใช้"
-                  id="app"
-                />
-              </div>
-              <div class="mb-5 mt-3">
-                <input
-                  type="text"
-                  class="form-control rounded-input"
-                  placeholder="รหัสผ่าน"
-                  id="app"
-                />
-              </div>
-
-              <div class="d-flex justify-content-center">
-                <button
-                  @click="$router.push('/sport')"
-                  id="app"
-                  type="button"
-                  class="btn btn-login"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                >
-                  เข้าสู่ระบบ
-                </button>
-                <!-- <button type="button" class="btn" data-bs-dismiss="modal">
-                  ปิด
-                </button> -->
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    </div>    
   </div>
 </template>
 
 <script>
 import Loading from "@/components/Loading.vue";
-import Footer from "@/components/Footer.vue";
-import Header from "@/components/Header.vue";
-import Carousel from "@/components/Carousel.vue";
 import Content from "@/components/Content.vue";
 export default {
-  name: "App",
-  data() {
-    return {
-      isLoading: true,
-      isHeader: false,
-      isContent: false,
-    };
-  },
-  components: {
-    Footer,
-    Carousel,
-    Content,
-    Header,
+  name: "App",  
+  components: {    
+    Content,    
     Loading,
   },
   mounted() {
     setTimeout(() => {
-      this.isLoading = false;
-      this.isHeader = true;      
+      this.isLoading = false;         
     }, 1500);
     // this.isContent = true;
   },
@@ -108,60 +35,4 @@ export default {
   color: #2c3e50;
 }
 
-.mt {
-  margin-top: 150px;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-.bg-1 {
-  width: 100%;
-  height: 450px;
-  background-image: url("@/assets/main-slider-img.jpg");
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.rounded-input {
-  padding: 10px;
-  border-radius: 25px;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-}
-
-.btn-login {
-  padding: 10px 20px;
-  border-radius: 50px;
-  color: #000;
-  background: #e0a500;
-  background: -moz-linear-gradient(
-    0deg,
-    rgba(224, 165, 0, 1) 0,
-    rgba(255, 228, 15, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    0deg,
-    rgba(224, 165, 0, 1) 0,
-    rgba(255, 228, 15, 1) 100%
-  );
-  background: linear-gradient(
-    0deg,
-    rgba(224, 165, 0, 1) 0,
-    rgba(255, 228, 15, 1) 100%
-  );
-  font-size: 18px;
-  font-weight: 600;
-  border: 0;
-}
 </style>
