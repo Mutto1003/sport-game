@@ -134,7 +134,7 @@ body {
 	 margin-bottom: 25px;
 }
  .responsive-table .table-header {
-	 background-color: #f2bd3a;
+	 background-color: #4a4a48;
 	 font-size: 14px;
 	 text-transform: uppercase;
 	 letter-spacing: 0.03em;

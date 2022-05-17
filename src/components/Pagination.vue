@@ -61,12 +61,12 @@ htm, body {
 	 line-height: 30px;
 }
  .page-numbers:hover, .page-numbers.current {
-	 background-color: #86c023;
+	 background-color: #4a4a48;
 	 color: #fff;
 }
  .page-numbers.prev:hover, .page-numbers.next:hover {
 	 background-color: transparent;
-	 color: #86c023;
+	 color: #4a4a48;
 }
  @media only screen and (max-width: 1199px) {
 	 .page-numbers {
