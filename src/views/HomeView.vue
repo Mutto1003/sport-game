@@ -582,7 +582,7 @@
 
               <div class="d-flex justify-content-center">
                 <button
-                  @click="$router.push('/sport')"
+                  @click="$router.push('/sportbook')"
                   id="app"
                   type="button"
                   class="btn btn-login"

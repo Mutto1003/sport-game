@@ -54,7 +54,6 @@
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                 data-bs-whatever="@mdo"
-                href=""
                 >Login</a
               >
             </li>
