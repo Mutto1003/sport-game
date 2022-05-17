@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import SportView from '../views/SportView.vue'
+import SportbookView from '../views/SportbookView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView
-  },   
+  },  
   {
-    path: '/sport',
-    name: 'sport',
-    component: SportView
+    path: '/sportbook',
+    name: 'sportbook',
+    component: SportbookView
   }, 
 ]
 

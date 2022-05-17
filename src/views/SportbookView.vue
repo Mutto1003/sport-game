@@ -1,8 +1,9 @@
 <template>
-  <div>
-    <Loading v-if="isLoading"></Loading>
-    <Header v-if="isHeader" class="fixed-top" />
-    <ImgAnimation />
+  <div class="sportbook bg-1">
+<Loading v-if="isLoading"></Loading>
+    <Header v-if="isHeader" class="fixed-top" />    
+    <Carousel class="mtc" />
+    <!-- <ImgAnimation /> -->
     <div class="container">
       <div class="row mt-5">
         <div class="col-2">
@@ -13,47 +14,60 @@
         </div>
       </div>
     </div>
-
     <Pagination />
     <Footer />
   </div>
 </template>
 
 <script>
+import Header from "@/components/Header.vue";
+import Loading from "@/components/Loading.vue";
+import Carousel from "@/components/Carousel.vue";
 import ImgAnimation from "@/components/ImgAnimation.vue";
 import Tabelsport from "@/components/Tabelsport.vue";
 import Menusport from "@/components/Menusport.vue";
 import Pagination from "@/components/Pagination.vue";
-import Loading from "@/components/Loading.vue";
-import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
-  name: "SportView",
-  data() {
+    
+name : "SportbookView",
+data() {
     return {
       isLoading: true,
-      isHeader: false,
-      isContent: false,
+      isHeader: false,      
     };
   },
-  components: {
+  components: {    
+    Loading,
+    Header,   
+    Carousel,
     ImgAnimation,
     Tabelsport,
     Menusport,
     Pagination,
-    Loading,
-    Header,
     Footer,
   },
   mounted() {
     setTimeout(() => {
       this.isLoading = false;
       this.isHeader = true;
-    }, 1500);
-    // this.isContent = true;
+    }, 500);    
   },
-};
+}
 </script>
 
-<style></style>
+<style scoped>
+.mtc {
+  margin-top: 150px;
+}
+
+.bg-1 {
+  width: 100%;
+  height: 450px;
+  background-image: url("@/assets/main-slider-img.jpg");
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+</style>

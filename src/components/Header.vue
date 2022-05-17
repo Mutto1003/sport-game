@@ -51,7 +51,7 @@
               aria-expanded="false"
               class=""
             >
-              <a @click="$router.push('/sport')" href="">About</a>
+              <a @click="$router.push('/sportbook')" href="">About</a>
             </li>
             <li
               class="uk-parent"
@@ -59,20 +59,7 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <a href="#">Pages</a>
-              <div
-                class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1 uk-dropdown-bottom"
-                style="top: 70px; left: 0px"
-              >
-                <div class="uk-grid uk-dropdown-grid">
-                  <div class="uk-width-1-1">
-                    <ul class="uk-nav uk-nav-navbar">
-                      <li><a href="players.html">Players</a></li>
-                      <li><a href="gallery.html">Gallery</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              <a @click="$router.push('/poker')" href="#">Pages</a>              
             </li>
             <li
               class="uk-parent"

@@ -8276,9 +8276,9 @@ a.uk-thumbnail:focus {
   visibility: hidden !important;
 }
 /* It's hidden, but still affects layout */
-.uk-invisible {
+/* .uk-invisible {
   visibility: hidden !important;
-}
+} */
 /* Show on hover */
 .uk-visible-hover:hover .uk-hidden,
 .uk-visible-hover:hover .uk-invisible {

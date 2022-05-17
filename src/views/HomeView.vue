@@ -2,7 +2,7 @@
   <div class="home bg-1">
     <Loading v-if="isLoading"></Loading>
     <Header v-if="isHeader" class="fixed-top" />    
-    <Carousel class="mt" />
+    <Carousel class="mtc" />
     <div class="va-latest-wrap">
       <div class="uk-container uk-container-center">
         <div class="va-latest-top">
@@ -617,7 +617,7 @@ export default {
     return {
       isLoading: true,
       isHeader: false,
-      isContent: false,
+      // isContent: false,
     };
   },
   components: { Loading, Header, Carousel, Footer },
@@ -625,7 +625,7 @@ export default {
     setTimeout(() => {
       this.isLoading = false;
       this.isHeader = true;
-    }, 1500);
+    }, 500);
     // this.isContent = true;
   },
 };
@@ -635,7 +635,7 @@ export default {
   padding: 90px 0;
 } */
 
-.mt {
+.mtc {
   margin-top: 150px;
 }
 
