@@ -7,10 +7,10 @@
     >
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="@/assets/banerSPBook.jpg" class="d-block w-100" alt="..." />
+          <img src="@/assets/banerSPBook-04.jpeg" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="@/assets/bg-6.jpg" class="d-block w-100" alt="..." />
+          <img src="@/assets/banerSPBook-03.jpeg" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
           <img src="@/assets/banerSPBook.jpg" class="d-block w-100" alt="..." />

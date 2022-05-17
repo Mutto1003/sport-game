@@ -19,41 +19,13 @@
               </div>
               <div class="footer-socials">
                 <div class="social-top">
-                  <a href="#"
-                    ><span
-                      class="uk-icon-small uk-icon-hover uk-icon-facebook"
-                    ></span
-                  ></a>
-                  <a href="#"
-                    ><span
-                      class="uk-icon-small uk-icon-hover uk-icon-twitter"
-                    ></span
-                  ></a>
-                  <a href="#"
-                    ><span
-                      class="uk-icon-small uk-icon-hover uk-icon-google"
-                    ></span
-                  ></a>
-                  <a href="#"
-                    ><span
-                      class="uk-icon-small uk-icon-hover uk-icon-pinterest"
-                    ></span
-                  ></a>
-                  <a href="#"
-                    ><span
-                      class="uk-icon-small uk-icon-hover uk-icon-youtube"
-                    ></span
-                  ></a>
-                  <a href="#"
-                    ><span
-                      class="uk-icon-small uk-icon-hover uk-icon-instagram"
-                    ></span
-                  ></a>
-                  <a href="#"
-                    ><span
-                      class="uk-icon-small uk-icon-hover uk-icon-flickr"
-                    ></span
-                  ></a>
+                  <img src="@/assets/team-ava5.png" alt="">
+                  <img src="@/assets/team-ava5.png" alt="">
+                  <img src="@/assets/team-ava5.png" alt="">
+                  <img src="@/assets/team-ava5.png" alt="">
+                  <img src="@/assets/team-ava5.png" alt="">
+                  <img src="@/assets/team-ava5.png" alt="">
+                  <img src="@/assets/team-ava5.png" alt="">
                 </div>
               </div>
               <div class="clear"></div>

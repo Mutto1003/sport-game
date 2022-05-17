@@ -1,16 +1,9 @@
 <template>
   <div>
-    <!-- <Loading
-      :active.sync="isLoading"
-      :can-cancel="true"
-      :on-cancel="onCancel"
-      :is-full-page="fullPage"
-    ></Loading> -->
-    <div class="bg-1">
-      <Header class="fixed-top" />
+    <Loading v-if="isLoading"></Loading>
+    <div class="bg-1">      
       <Carousel class="mt" />
-      <Content class="mt-5" />
-      <Footer />
+      <Content class="mt-5" />     
     </div>
 
     <div
@@ -83,8 +76,9 @@ export default {
   name: "App",
   data() {
     return {
-      isLoading: false,
-      fullPage: true,
+      isLoading: true,
+      isHeader: false,
+      isContent: false,
     };
   },
   components: {
@@ -94,17 +88,12 @@ export default {
     Header,
     Loading,
   },
-  methods: {
-    doAjax() {
-      this.isLoading = true;
-      // simulate AJAX
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 3000);
-    },
-    onCancel() {
-      console.log("User cancelled the loader.");
-    },
+  mounted() {
+    setTimeout(() => {
+      this.isLoading = false;
+      this.isHeader = true;      
+    }, 1500);
+    // this.isContent = true;
   },
 };
 </script>

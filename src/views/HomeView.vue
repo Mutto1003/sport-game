@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <Loading v-if="isLoading"></Loading>
+    <Header v-if="isHeader" class="fixed-top" />
     <div class="va-latest-wrap">
       <div class="uk-container uk-container-center">
         <div class="va-latest-top">
@@ -539,15 +541,32 @@
         </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import Loading from "@/components/Loading.vue";
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
 export default {
   name: "HomeView",
-  components: {},
+  data() {
+    return {
+      isLoading: true,
+      isHeader: false,
+      isContent: false,
+    };
+  },
+  components: {Loading, Header,Footer,  },
+  mounted() {
+    setTimeout(() => {
+      this.isLoading = false;
+      this.isHeader = true;      
+    }, 1500);
+    // this.isContent = true;
+  },
 };
 </script>
 <style scoped>
