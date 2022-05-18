@@ -1,8 +1,9 @@
 <template>
   <div class="sportbook bg-1">
     <Loading v-if="isLoading"></Loading>
-    <Header v-if="isHeader" class="fixed-top" />
+    <HeaderSuccess v-if="isHeader" class="fixed-top" />
     <Carousel class="mtc" />
+    <Poker />
     <ImgAnimation />
     <div class="container">
       <div class="row mt-5">
@@ -20,7 +21,7 @@
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import HeaderSuccess from "@/components/HeaderSuccess.vue";
 import Loading from "@/components/Loading.vue";
 import Carousel from "@/components/Carousel.vue";
 import ImgAnimation from "@/components/ImgAnimation.vue";
@@ -28,6 +29,7 @@ import Tabelsport from "@/components/Tabelsport.vue";
 import Menusport from "@/components/Menusport.vue";
 import Pagination from "@/components/Pagination.vue";
 import Footer from "@/components/Footer.vue";
+import Poker from "@/components/Poker.vue";
 
 export default {
   name: "SportbookView",
@@ -39,8 +41,9 @@ export default {
   },
   components: {
     Loading,
-    Header,
+    HeaderSuccess,
     Carousel,
+    Poker,
     ImgAnimation,
     Tabelsport,
     Menusport,

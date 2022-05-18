@@ -8,45 +8,11 @@
             <span>Sport<em>.ak</em></span>
           </a>
 
-          <ul class="uk-navbar-nav uk-hidden-small">
-            <li
-              class="uk-parent uk-active"
-              data-uk-dropdown="{'preventflip':'y'}"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <a @click="$router.push('/')" href="">Home</a>
-            </li>
-
-            <li
-              data-uk-dropdown="{'preventflip':'y'}"
-              aria-haspopup="true"
-              aria-expanded="false"
-              class=""
-            >
-              <a @click="$router.push('/sportbook')" href="">Sport</a>
-            </li>
-
-            <li
-              data-uk-dropdown="{'preventflip':'y'}"
-              aria-haspopup="true"
-              aria-expanded="false"
-              class=""
-            >
-              <a @click="$router.push('/report')" href="">Report</a>
-            </li>
-
-            <li
-              data-uk-dropdown="{'preventflip':'y'}"
-              aria-haspopup="true"
-              aria-expanded="false"
-              class=""
-            >
-              <a @click="$router.push('/score')" href="">Score</a>
-            </li>
+          <ul class="uk-navbar-nav uk-hidden-small">           
 
             <li>
               <a
+                v-on:click="clickLogin"
                 data-uk-dropdown="{'preventflip':'y'}"
                 aria-haspopup="true"
                 aria-expanded="false"
@@ -73,7 +39,21 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      isMenu: false,
+      // isContent: false,
+    };
+  },
+  methods: {
+    clickLogin() {
+      // alert("Hi");
+      // this.isMenu = true;
+    },
+    // We can add our functions here
+  },
+};
 </script>
 
 <style scoped>

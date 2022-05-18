@@ -1,7 +1,7 @@
 <template>
   <div class="score">
     <Loading v-if="isLoading"></Loading>
-    <Header v-if="isHeader" class="fixed-top" />
+    <HeaderSuccess v-if="isHeader" class="fixed-top" />
     <!-- <Carousel class="mtc" /> -->
     <div class="container mtc">
       <div
@@ -486,7 +486,7 @@
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import HeaderSuccess from "@/components/HeaderSuccess.vue";
 import Loading from "@/components/Loading.vue";
 import Carousel from "@/components/Carousel.vue";
 import ImgAnimation from "@/components/ImgAnimation.vue";
@@ -505,7 +505,7 @@ export default {
   },
   components: {
     Loading,
-    Header,
+    HeaderSuccess,
     Carousel,
     ImgAnimation,
     Tabelsport,
