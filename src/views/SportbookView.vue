@@ -2,8 +2,11 @@
   <div class="sportbook bg-1">
     <Loading v-if="isLoading"></Loading>
     <HeaderSuccess v-if="isHeader" class="fixed-top" />
-    <Carousel class="mtc" />
-    <Poker />
+    <Carousel class="mtc" />    
+    <Poker class="mt-5 mb-5" />
+    <div class="our-history-title">
+      <h2>Our <span>History</span></h2>
+    </div>
     <ImgAnimation />
     <div class="container">
       <div class="row mt-5">
