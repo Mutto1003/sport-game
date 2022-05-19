@@ -10,15 +10,19 @@
 
           <ul class="uk-navbar-nav uk-hidden-small">
             <li
-              class="uk-parent uk-active"
+              @click.stop.prevent="myFilter('H')"
+              v-bind:class="[activeMenu == 'H' ? 'uk-active' : '']"
+              class="uk-parent"
               data-uk-dropdown="{'preventflip':'y'}"
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <a @click="$router.push('/')" href="">Home</a>
+              <a @click="$router.push('/')" href="#">Home</a>
             </li>
 
             <li
+              @click.stop.prevent="myFilter('P')"
+              v-bind:class="[activeMenu == 'P' ? 'uk-active' : '']"
               data-uk-dropdown="{'preventflip':'y'}"
               aria-haspopup="true"
               aria-expanded="false"
@@ -28,6 +32,8 @@
             </li>
 
             <li
+              @click.stop.prevent="myFilter('R')"
+              v-bind:class="[activeMenu == 'R' ? 'uk-active' : '']"
               data-uk-dropdown="{'preventflip':'y'}"
               aria-haspopup="true"
               aria-expanded="false"
@@ -37,15 +43,21 @@
             </li>
 
             <li
+              @click.stop.prevent="myFilter('S')"
+              @click="$router.push('/score')"
+              v-bind:class="[activeMenu == 'S' ? 'uk-active' : '']"
               data-uk-dropdown="{'preventflip':'y'}"
               aria-haspopup="true"
               aria-expanded="false"
               class=""
             >
-              <a @click="$router.push('/score')" href="">Score</a>
+              <a href="">Score</a>
             </li>
 
-            <li>
+            <li
+              @click.stop.prevent="myFilter('H')"
+              v-bind:class="[activeMenu == 'H' ? 'uk-active' : '']"
+            >
               <a @click="$router.push('/')" href="">Logout</a>
             </li>
 
@@ -68,7 +80,7 @@ export default {
   name: "HeaderSuccess",
   data() {
     return {
-      isMenu: false,
+      activeMenu: this.$store.state.test,
       // isContent: false,
     };
   },
@@ -78,6 +90,11 @@ export default {
       // this.isMenu = true;
     },
     // We can add our functions here
+    myFilter(menu) {
+      this.$store.state.test = menu;
+      this.activeMenu = menu;
+      // some code to filter users
+    },
   },
 };
 </script>

@@ -57,6 +57,7 @@ export default {
     setTimeout(() => {
       this.isLoading = false;
       this.isHeader = true;
+      this.$store.state.test = "P"
     }, 500);
   },
 };
