@@ -9,9 +9,7 @@
           </a>
 
           <ul class="uk-navbar-nav uk-hidden-small">
-            <li
-              @click.stop.prevent="myFilter('H')"
-              v-bind:class="[activeMenu == 'H' ? 'uk-active' : '']"
+            <li              
               class="uk-parent"
               data-uk-dropdown="{'preventflip':'y'}"
               aria-haspopup="true"
@@ -55,8 +53,7 @@
             </li>
 
             <li
-              @click.stop.prevent="myFilter('H')"
-              v-bind:class="[activeMenu == 'H' ? 'uk-active' : '']"
+              
             >
               <a @click="$router.push('/')" href="">Logout</a>
             </li>
@@ -80,7 +77,7 @@ export default {
   name: "HeaderSuccess",
   data() {
     return {
-      activeMenu: this.$store.state.test,
+      activeMenu: this.$store.state.NavbarValue,
       // isContent: false,
     };
   },
@@ -91,8 +88,8 @@ export default {
     },
     // We can add our functions here
     myFilter(menu) {
-      this.$store.state.test = menu;
-      this.activeMenu = menu;
+      this.$store.state.NavbarValue = menu;
+      // this.activeMenu = menu;
       // some code to filter users
     },
   },

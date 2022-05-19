@@ -87,7 +87,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava.png"
+                                src="@/assets/team-ava.png"
                                 class="img-polaroid"
                                 alt="England VS Amsterdam (2015-11-14)"
                                 title="England VS Amsterdam (2015-11-14)"
@@ -101,7 +101,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava1.png"
+                                src="@/assets/team-ava1.png"
                                 class="img-polaroid"
                                 alt="England VS Amsterdam (2015-11-14)"
                                 title="England VS Amsterdam (2015-11-14)"
@@ -124,7 +124,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava2.png"
+                                src="@/assets/team-ava2.png"
                                 class="img-polaroid"
                                 alt="Cambridgehire VS china (2015-11-29)"
                                 title="Cambridgehire VS china (2015-11-29)"
@@ -138,7 +138,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava3.png"
+                                src="@/assets/team-ava3.png"
                                 class="img-polaroid"
                                 alt="Cambridgehire VS china (2015-11-29)"
                                 title="Cambridgehire VS china (2015-11-29)"
@@ -161,7 +161,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava4.png"
+                                src="@/assets/team-ava4.png"
                                 class="img-polaroid"
                                 alt="Cambridgehire VS china (2015-11-20)"
                                 title="Cambridgehire VS china (2015-11-20)"
@@ -175,7 +175,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava5.png"
+                                src="@/assets/team-ava5.png"
                                 class="img-polaroid"
                                 alt="Cambridgehire VS china (2015-11-20)"
                                 title="Cambridgehire VS china (2015-11-20)"
@@ -198,7 +198,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava.png"
+                                src="@/assets/team-ava.png"
                                 class="img-polaroid"
                                 alt="England VS Amsterdam (2015-11-14)"
                                 title="England VS Amsterdam (2015-11-14)"
@@ -212,7 +212,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava1.png"
+                                src="@/assets/team-ava1.png"
                                 class="img-polaroid"
                                 alt="England VS Amsterdam (2015-11-14)"
                                 title="England VS Amsterdam (2015-11-14)"
@@ -235,7 +235,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava2.png"
+                                src="@/assets/team-ava2.png"
                                 class="img-polaroid"
                                 alt="Cambridgehire VS china (2015-11-29)"
                                 title="Cambridgehire VS china (2015-11-29)"
@@ -249,7 +249,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava3.png"
+                                src="@/assets/team-ava3.png"
                                 class="img-polaroid"
                                 alt="Cambridgehire VS china (2015-11-29)"
                                 title="Cambridgehire VS china (2015-11-29)"
@@ -272,7 +272,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava4.png"
+                                src="@/assets/team-ava4.png"
                                 class="img-polaroid"
                                 alt="King VS china (2015-11-20)"
                                 title="King VS china (2015-11-20)"
@@ -286,7 +286,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava5.png"
+                                src="@/assets/team-ava5.png"
                                 class="img-polaroid"
                                 alt="King VS china (2015-11-20)"
                                 title="King VS china (2015-11-20)"
@@ -309,7 +309,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava.png"
+                                src="@/assets/team-ava.png"
                                 class="img-polaroid"
                                 alt="England VS Amsterdam (2015-11-14)"
                                 title="England VS Amsterdam (2015-11-14)"
@@ -323,7 +323,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava1.png"
+                                src="@/assets/team-ava1.png"
                                 class="img-polaroid"
                                 alt="England VS Amsterdam (2015-11-14)"
                                 title="England VS Amsterdam (2015-11-14)"
@@ -346,7 +346,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava2.png"
+                                src="@/assets/team-ava2.png"
                                 class="img-polaroid"
                                 alt="Cambridgehire VS china (2015-11-29)"
                                 title="Cambridgehire VS china (2015-11-29)"
@@ -360,7 +360,7 @@
                           <div class="logo">
                             <a href="match-single.html">
                               <img
-                                src="images/team-ava3.png"
+                                src="@/assets/team-ava3.png"
                                 class="img-polaroid"
                                 alt="Cambridgehire VS china (2015-11-29)"
                                 title="Cambridgehire VS china (2015-11-29)"

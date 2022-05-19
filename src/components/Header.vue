@@ -8,10 +8,9 @@
             <span>Sport<em>.ak</em></span>
           </a>
 
-          <ul class="uk-navbar-nav uk-hidden-small">           
-
+          <ul class="uk-navbar-nav uk-hidden-small">
             <li>
-              <a
+              <a                
                 v-on:click="clickLogin"
                 data-uk-dropdown="{'preventflip':'y'}"
                 aria-haspopup="true"
@@ -48,6 +47,7 @@ export default {
   },
   methods: {
     clickLogin() {
+      this.$store.state.NavbarValue = "P";
       // alert("Hi");
       // this.isMenu = true;
     },
