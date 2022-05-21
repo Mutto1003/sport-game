@@ -13127,6 +13127,7 @@ q {
   font-weight: bold;
   color: #363533;
   text-transform: uppercase;
+  text-decoration: none;
   transition: 400ms all;
   -webkit-transition: 400ms all ;
 }

@@ -11,92 +11,41 @@
         <div class="col col-1 font-t">1H. O/U</div>
         <div class="col col-1 font-t">1H. 1X2</div>
       </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="Job Id">20.10</div>
-        <div class="col col-4" data-label="Job Id">Liverpool VS Man city</div>
-        <div class="col col-1" data-label="Job Id">-0.92</div>
-        <div class="col col-1" data-label="Job Id">0.89</div>
-        <div class="col col-1" data-label="Job Id">1.63</div>
-        <div class="col col-1" data-label="Job Id">0.83</div>
-        <div class="col col-1" data-label="Job Id">0.98</div>
-        <div class="col col-1" data-label="Job Id">2.19</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="Job Id">20.10</div>
-        <div class="col col-4" data-label="Job Id">Liverpool VS Man city</div>
-        <div class="col col-1" data-label="Job Id">-0.92</div>
-        <div class="col col-1" data-label="Job Id">0.89</div>
-        <div class="col col-1" data-label="Job Id">1.63</div>
-        <div class="col col-1" data-label="Job Id">0.83</div>
-        <div class="col col-1" data-label="Job Id">0.98</div>
-        <div class="col col-1" data-label="Job Id">2.19</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="Job Id">20.10</div>
-        <div class="col col-4" data-label="Job Id">Liverpool VS Man city</div>
-        <div class="col col-1" data-label="Job Id">-0.92</div>
-        <div class="col col-1" data-label="Job Id">0.89</div>
-        <div class="col col-1" data-label="Job Id">1.63</div>
-        <div class="col col-1" data-label="Job Id">0.83</div>
-        <div class="col col-1" data-label="Job Id">0.98</div>
-        <div class="col col-1" data-label="Job Id">2.19</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="Job Id">20.10</div>
-        <div class="col col-4" data-label="Job Id">Liverpool VS Man city</div>
-        <div class="col col-1" data-label="Job Id">-0.92</div>
-        <div class="col col-1" data-label="Job Id">0.89</div>
-        <div class="col col-1" data-label="Job Id">1.63</div>
-        <div class="col col-1" data-label="Job Id">0.83</div>
-        <div class="col col-1" data-label="Job Id">0.98</div>
-        <div class="col col-1" data-label="Job Id">2.19</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="Job Id">20.10</div>
-        <div class="col col-4" data-label="Job Id">Liverpool VS Man city</div>
-        <div class="col col-1" data-label="Job Id">-0.92</div>
-        <div class="col col-1" data-label="Job Id">0.89</div>
-        <div class="col col-1" data-label="Job Id">1.63</div>
-        <div class="col col-1" data-label="Job Id">0.83</div>
-        <div class="col col-1" data-label="Job Id">0.98</div>
-        <div class="col col-1" data-label="Job Id">2.19</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="Job Id">20.10</div>
-        <div class="col col-4" data-label="Job Id">Liverpool VS Man city</div>
-        <div class="col col-1" data-label="Job Id">-0.92</div>
-        <div class="col col-1" data-label="Job Id">0.89</div>
-        <div class="col col-1" data-label="Job Id">1.63</div>
-        <div class="col col-1" data-label="Job Id">0.83</div>
-        <div class="col col-1" data-label="Job Id">0.98</div>
-        <div class="col col-1" data-label="Job Id">2.19</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="Job Id">20.10</div>
-        <div class="col col-4" data-label="Job Id">Liverpool VS Man city</div>
-        <div class="col col-1" data-label="Job Id">-0.92</div>
-        <div class="col col-1" data-label="Job Id">0.89</div>
-        <div class="col col-1" data-label="Job Id">1.63</div>
-        <div class="col col-1" data-label="Job Id">0.83</div>
-        <div class="col col-1" data-label="Job Id">0.98</div>
-        <div class="col col-1" data-label="Job Id">2.19</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="Job Id">20.10</div>
-        <div class="col col-4" data-label="Job Id">Liverpool VS Man city</div>
-        <div class="col col-1" data-label="Job Id">-0.92</div>
-        <div class="col col-1" data-label="Job Id">0.89</div>
-        <div class="col col-1" data-label="Job Id">1.63</div>
-        <div class="col col-1" data-label="Job Id">0.83</div>
-        <div class="col col-1" data-label="Job Id">0.98</div>
-        <div class="col col-1" data-label="Job Id">2.19</div>
-      </li>
+      <li class="table-row" v-for="(item, index) in mCourses" :key="index">
+        <div class="col col-1" data-label="Job Id">{{item.time}}</div>
+        <div class="col col-4" data-label="Job Id">{{item.them}}</div>
+        <div class="col col-1" data-label="Job Id">{{item.price1}}</div>
+        <div class="col col-1" data-label="Job Id">{{item.price2}}</div>
+        <div class="col col-1" data-label="Job Id">{{item.price3}}</div>
+        <div class="col col-1" data-label="Job Id">{{item.price4}}</div>
+        <div class="col col-1" data-label="Job Id">{{item.price5}}</div>
+        <div class="col col-1" data-label="Job Id">{{item.price6}}</div>
+      </li>      
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      mCourses: [
+      { time: "20.10", them: "Liverpool VS Man city", price1:"-0.92", price2:"2" ,price3:"3", price4:"4" ,price5:"5", price6:"6" },
+      { time: "20.10", them: "Liverpool VS Man city", price1:"-0.92", price2:"2" ,price3:"3", price4:"4" ,price5:"5", price6:"6" },
+      { time: "20.10", them: "Liverpool VS Man city", price1:"-0.92", price2:"2" ,price3:"3", price4:"4" ,price5:"5", price6:"6" },
+      { time: "20.10", them: "Liverpool VS Man city", price1:"-0.92", price2:"2" ,price3:"3", price4:"4" ,price5:"5", price6:"6" },
+      { time: "20.10", them: "Liverpool VS Man city", price1:"-0.92", price2:"2" ,price3:"3", price4:"4" ,price5:"5", price6:"6" },
+      { time: "20.10", them: "Liverpool VS Man city", price1:"-0.92", price2:"2" ,price3:"3", price4:"4" ,price5:"5", price6:"6" },
+      { time: "20.10", them: "Liverpool VS Man city", price1:"-0.92", price2:"2" ,price3:"3", price4:"4" ,price5:"5", price6:"6" },
+      { time: "20.10", them: "Liverpool VS Man city", price1:"-0.92", price2:"2" ,price3:"3", price4:"4" ,price5:"5", price6:"6" },
+      { time: "20.10", them: "Liverpool VS Man city", price1:"-0.92", price2:"2" ,price3:"3", price4:"4" ,price5:"5", price6:"6" },
+      { time: "20.10", them: "Liverpool VS Man city", price1:"-0.92", price2:"2" ,price3:"3", price4:"4" ,price5:"5", price6:"6" },
+      { time: "20.10", them: "Liverpool VS Man city", price1:"-0.92", price2:"2" ,price3:"3", price4:"4" ,price5:"5", price6:"6" },
+      { time: "20.10", them: "Liverpool VS Man city", price1:"-0.92", price2:"2" ,price3:"3", price4:"4" ,price5:"5", price6:"6" },      
+    ]
+    }
+  },
+};
 </script>
 
 <style scoped>
@@ -131,7 +80,7 @@ body {
 	 padding: 15px 25px;
 	 display: flex;
 	 justify-content: space-between;
-	 margin-bottom: 25px;
+	 margin-bottom: 20px;
 }
  .responsive-table .table-header {
 	 background-color: #4a4a48;
