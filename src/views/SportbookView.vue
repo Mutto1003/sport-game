@@ -5,7 +5,7 @@
     <Carousel class="mtc" />
     <Poker class="mt-5 mb-5" />
     <div class="our-history-title">
-      <h2>Our <span>History</span></h2>
+      <h2>ราคาต่อรอง <span>& สูงต่ำ</span></h2>
     </div>
     <ImgAnimation />
     <div class="container">
@@ -14,12 +14,13 @@
           <Menusport />
         </div>
         <div class="col-10">
-          <Tabelsport />
+          <component :is="component=$store.getters.getcomponent"></component>
+          <!-- <Tabelsport />
           <Tablepredictscore v-if="isTabelsport" />
-          <TableCorners v-if="Tablepredictscore" />
+          <TableCorners v-if="Tablepredictscore" /> -->
         </div>
       </div>
-    </div>
+    </div>   
 
     <!-- Modal -->
     <div
@@ -115,7 +116,13 @@
         </div>
       </div>
     </div>
-
+    <!-- <h1>{{ this.$store.getters.getcomponent }}</h1>
+    <h1>{{ component }}</h1>
+    <button @click="add('Tcorner')">ADD</button>
+    <div>
+      <button @click="component = 'Tcorner'">show from 1</button>
+      <button @click="component = 'Tscore'">show from 1</button>
+    </div> -->
     <Pagination />
     <Footer />
   </div>
@@ -140,8 +147,9 @@ export default {
     return {
       isLoading: true,
       isHeader: false,
-      isTabelsport: false,
-      Tablepredictscore: false,
+      // isTabelsport: true,
+      // Tablepredictscore: true,
+      component: this.$store.getters.getcomponent,           
     };
   },
   components: {
@@ -150,9 +158,9 @@ export default {
     Carousel,
     Poker,
     ImgAnimation,
-    Tabelsport,
-    Tablepredictscore,
-    TableCorners,
+    Tsport: Tabelsport,
+    Tscore: Tablepredictscore,
+    Tcorner: TableCorners,
     Menusport,
     Pagination,
     Footer,
@@ -164,6 +172,11 @@ export default {
       this.$store.state.test = "P";
     }, 500);
   },
+  methods: {
+    add(itemMenu){
+      this.$store.dispatch("addAction",itemMenu)
+    }
+  }
 };
 </script>
 

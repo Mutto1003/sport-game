@@ -19,7 +19,7 @@
             </li>
 
             <li
-              @click.stop.prevent="myFilter('P')"
+              @click.stop.prevent="myhighlight('P')"
               v-bind:class="[activeMenu == 'P' ? 'uk-active' : '']"
               data-uk-dropdown="{'preventflip':'y'}"
               aria-haspopup="true"
@@ -30,7 +30,7 @@
             </li>
 
             <li
-              @click.stop.prevent="myFilter('R')"
+              @click.stop.prevent="myhighlight('R')"
               v-bind:class="[activeMenu == 'R' ? 'uk-active' : '']"
               data-uk-dropdown="{'preventflip':'y'}"
               aria-haspopup="true"
@@ -41,7 +41,7 @@
             </li>
 
             <li
-              @click.stop.prevent="myFilter('S')"
+              @click.stop.prevent="myhighlight('S')"
               @click="$router.push('/score')"
               v-bind:class="[activeMenu == 'S' ? 'uk-active' : '']"
               data-uk-dropdown="{'preventflip':'y'}"
@@ -87,7 +87,7 @@ export default {
       // this.isMenu = true;
     },
     // We can add our functions here
-    myFilter(menu) {
+    myhighlight(menu) {
       this.$store.state.NavbarValue = menu;
       // this.activeMenu = menu;
       // some code to filter users

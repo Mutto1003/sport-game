@@ -16,7 +16,20 @@
       </li>
       <li class="table-row">
         <div class="col col-1" data-label="Job Id">20.10</div>
-        <div class="col col-2" data-label="Job Id">Liverpool VS Man city</div>
+        <div class="col col-2" data-label="Job Id">Liverpool <span class="red_bg">1-3</span>  Man city</div>
+        <div class="col col-1" data-label="Job Id">-0.92</div>
+        <div class="col col-1" data-label="Job Id">0.89</div>
+        <div class="col col-1" data-label="Job Id">1.63</div>
+        <div class="col col-1" data-label="Job Id">0.83</div>
+        <div class="col col-1" data-label="Job Id">0.98</div>
+        <div class="col col-1" data-label="Job Id">2.19</div>
+        <div class="col col-1" data-label="Job Id">2.19</div>
+        <div class="col col-1" data-label="Job Id">2.19</div>
+        <div class="col col-1" data-label="Job Id">2.19</div>
+      </li> 
+	  <li class="table-row">
+        <div class="col col-1" data-label="Job Id">20.10</div>
+        <div class="col col-2" data-label="Job Id">Manchester City <span class="red_bg">4-0</span>  Leeds</div>
         <div class="col col-1" data-label="Job Id">-0.92</div>
         <div class="col col-1" data-label="Job Id">0.89</div>
         <div class="col col-1" data-label="Job Id">1.63</div>
@@ -43,6 +56,13 @@ export default {};
   /* text-align: center; */
   /* border: #000; */
   color: #ffffff;
+}
+.red_bg {
+    width: 100%;
+    background-color: red;
+	color: #ffffff;
+	padding: 2px 5px 2px 5px;
+	border-radius: 5px;
 }
 body {
 	 font-family: 'lato', sans-serif;

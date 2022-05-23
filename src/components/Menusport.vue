@@ -3,9 +3,9 @@
     <div class="col-12">
       <div class="box-sidebar-left">
         <div class="bsl-menu">
-          <a href="" class="bsl-link popular"
+          <a @click="add('Tsport')" class="bsl-link popular"
             ><div class="bsl-icon">
-              <img src="/assets/popular.fca78488.svg" class="bsli" />
+              <!-- <img src="/assets/popular.fca78488.svg" class="bsli" /> -->
             </div>
             <div class="bsl-title font-t">ราคาต่อรอง & สูงต่ำ</div></a
           ><a
@@ -13,27 +13,27 @@
             href=""
             class="router-link-active router-link-exact-active bsl-link new"
             ><div class="bsl-icon">
-              <img src="/assets/new.8e600219.svg" class="bsli" />
+              <!-- <img src="/assets/new.8e600219.svg" class="bsli" /> -->
             </div>
             <div class="bsl-title font-t">คี่/คู่ & ประตูรวม</div></a
-          ><a href="" class="bsl-link provider"
+          ><a @click="add('Tcorner')" class="bsl-link corner"
             ><div class="bsl-icon">
-              <img src="/assets/provider.dc1d9994.svg" class="bsli" />
+              <!-- <img src="/assets/corner.dc1d9994.svg" class="bsli" /> -->
             </div>
             <div class="bsl-title font-t">1X2 & สองโอกาส</div></a
-          ><a href="" class="bsl-link casino"
+          ><a @click="add('Tscore')" class="bsl-link casino"
             ><div class="bsl-icon">
-              <img src="/assets/casino.6b269c4e.svg" class="bsli" />
+              <!-- <img src="/assets/casino.6b269c4e.svg" class="bsli" /> -->
             </div>
             <div class="bsl-title font-t">ครึ่งเวลา / เต็มเวลา</div></a
           ><a href="" class="bsl-link slot"
             ><div class="bsl-icon">
-              <img src="/assets/slot.849d8d0f.svg" class="bsli" />
+              <!-- <img src="/assets/slot.849d8d0f.svg" class="bsli" /> -->
             </div>
             <div class="bsl-title font-t">ทายผลสกอร์</div></a
           ><a href="" class="bsl-link fishing"
             ><div class="bsl-icon">
-              <img src="/assets/fishing.811d1996.svg" class="bsli" />
+              <!-- <img src="/assets/fishing.811d1996.svg" class="bsli" /> -->
             </div>
             <div class="bsl-title font-t">ทายผลผู้ชนะ</div></a
           >
@@ -48,20 +48,28 @@
             data-bs-toggle="modal"
             data-bs-target="#staticBackdrop"
             ><div class="bsl-icon">
-              <img src="/assets/fishing.811d1996.svg" class="bsli" />
+              <!-- <img src="/assets/fishing.811d1996.svg" class="bsli" /> -->
             </div>
             <div class="bsl-title font-t">
               รายการแทง <span class="notification-count texta mx-3">6</span>
             </div></a
           >
-        </div>        
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Menusport",
+  methods: {
+    add(itemMenu){
+      // this.$store.dispatch("addAction",itemMenu)
+      this.$store.state.component = itemMenu;
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -90,6 +98,12 @@ export default {};
   text-decoration: none;
   font-weight: 600;
 }
+.bsl-link.popular:hover {
+  box-shadow: 0 0 10px #fa3d63cc;;
+  /* background-color: #fa3d63cc; */
+  transition: box-shadow 0.5s;
+  text-decoration: none;
+}
 
 .bsl-link.new {
   color: #ffc107;
@@ -104,13 +118,13 @@ export default {};
   text-decoration: none;
 }
 
-.bsl-link.provider {
+.bsl-link.corner {
   color: #007dcf;
   text-decoration: none;
   font-weight: 600;
 }
 
-.bsl-link.provider:hover {
+.bsl-link.corner:hover {
   box-shadow: 0 0 10px #007dcf;
   text-decoration: none;
   transition: box-shadow 0.5s;
