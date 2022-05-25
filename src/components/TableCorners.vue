@@ -1,7 +1,7 @@
 <template>
   <div class="">    
     <ul class="responsive-table">
-      <li class="table-header">
+      <li class="table-header border-h">
         <div class="col col-1 font-t">เวลา</div>
         <div class="col col-2 font-t">คู่แข่งขัน</div>
         <div class="col col-1 font-t">1</div>
@@ -44,6 +44,7 @@ export default {};
   /* border: #000; */
   color: #ffffff;
 }
+
 body {
 	 font-family: 'lato', sans-serif;
 }

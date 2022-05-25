@@ -490,7 +490,7 @@ import HeaderSuccess from "@/components/HeaderSuccess.vue";
 import Loading from "@/components/Loading.vue";
 import Carousel from "@/components/Carousel.vue";
 import ImgAnimation from "@/components/ImgAnimation.vue";
-import Tabelsport from "@/components/Tabelsport.vue";
+import Tabelsport from "@/components/Tablesport.vue";
 import Menusport from "@/components/Menusport.vue";
 import Pagination from "@/components/Pagination.vue";
 import Footer from "@/components/Footer.vue";

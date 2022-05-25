@@ -133,7 +133,7 @@ import HeaderSuccess from "@/components/HeaderSuccess.vue";
 import Loading from "@/components/Loading.vue";
 import Carousel from "@/components/Carousel.vue";
 import ImgAnimation from "@/components/ImgAnimation.vue";
-import Tabelsport from "@/components/Tabelsport.vue";
+import Tabelsport from "@/components/Tablesport.vue";
 import Tablepredictscore from "@/components/Tablepredictscore.vue";
 import TableCorners from "@/components/TableCorners.vue";
 import Menusport from "@/components/Menusport.vue";
