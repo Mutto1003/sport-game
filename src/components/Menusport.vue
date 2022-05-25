@@ -8,9 +8,7 @@
               <!-- <img src="/assets/popular.fca78488.svg" class="bsli" /> -->
             </div>
             <div class="bsl-title font-t">ราคาต่อรอง & สูงต่ำ</div></a
-          ><a
-            aria-current="page"
-            href=""
+          ><a @click="add('Tgoal')"           
             class="router-link-active router-link-exact-active bsl-link new"
             ><div class="bsl-icon">
               <!-- <img src="/assets/new.8e600219.svg" class="bsli" /> -->
@@ -26,12 +24,12 @@
               <!-- <img src="/assets/casino.6b269c4e.svg" class="bsli" /> -->
             </div>
             <div class="bsl-title font-t">ครึ่งเวลา / เต็มเวลา</div></a
-          ><a href="" class="bsl-link slot"
+          ><a @click="add('TScore')" class="bsl-link slot"
             ><div class="bsl-icon">
               <!-- <img src="/assets/slot.849d8d0f.svg" class="bsli" /> -->
             </div>
             <div class="bsl-title font-t">ทายผลสกอร์</div></a
-          ><a href="" class="bsl-link fishing"
+          ><a @click="add('Twin')" class="bsl-link fishing"
             ><div class="bsl-icon">
               <!-- <img src="/assets/fishing.811d1996.svg" class="bsli" /> -->
             </div>

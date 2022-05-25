@@ -14,13 +14,15 @@
           <Menusport />
         </div>
         <div class="col-10">
-          <component :is="component=$store.getters.getcomponent"></component>
+          <component
+            :is="(component = $store.getters.getcomponent)"
+          ></component>
           <!-- <Tabelsport />
           <Tablepredictscore v-if="isTabelsport" />
           <TableCorners v-if="Tablepredictscore" /> -->
         </div>
       </div>
-    </div>   
+    </div>
 
     <!-- Modal -->
     <div
@@ -136,6 +138,9 @@ import ImgAnimation from "@/components/ImgAnimation.vue";
 import Tabelsport from "@/components/Tablesport.vue";
 import Tablepredictscore from "@/components/Tablepredictscore.vue";
 import TableCorners from "@/components/TableCorners.vue";
+import TableScore from "@/components/TableScore.vue";
+import TableTeamWin from "@/components/TableTeamWin.vue";
+import TableTotalGoal from "@/components/TableTotalGoal.vue";
 import Menusport from "@/components/Menusport.vue";
 import Pagination from "@/components/Pagination.vue";
 import Footer from "@/components/Footer.vue";
@@ -149,7 +154,7 @@ export default {
       isHeader: false,
       // isTabelsport: true,
       // Tablepredictscore: true,
-      component: this.$store.getters.getcomponent,           
+      component: this.$store.getters.getcomponent,
     };
   },
   components: {
@@ -161,6 +166,9 @@ export default {
     Tsport: Tabelsport,
     Tscore: Tablepredictscore,
     Tcorner: TableCorners,
+    TScore: TableScore,
+    Tgoal: TableTotalGoal,
+    Twin: TableTeamWin,
     Menusport,
     Pagination,
     Footer,
@@ -173,10 +181,10 @@ export default {
     }, 500);
   },
   methods: {
-    add(itemMenu){
-      this.$store.dispatch("addAction",itemMenu)
-    }
-  }
+    add(itemMenu) {
+      this.$store.dispatch("addAction", itemMenu);
+    },
+  },
 };
 </script>
 
