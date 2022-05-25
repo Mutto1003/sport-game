@@ -18,4 +18,5 @@ export default {};
   height: 350px;
   border: 1px solid black;
 }
+@import "@/css/theme.css";
 </style>

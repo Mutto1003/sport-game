@@ -8,7 +8,8 @@
               <!-- <img src="/assets/popular.fca78488.svg" class="bsli" /> -->
             </div>
             <div class="bsl-title font-t">ราคาต่อรอง & สูงต่ำ</div></a
-          ><a @click="add('Tgoal')"           
+          ><a
+            @click="add('Tgoal')"
             class="router-link-active router-link-exact-active bsl-link new"
             ><div class="bsl-icon">
               <!-- <img src="/assets/new.8e600219.svg" class="bsli" /> -->
@@ -62,11 +63,11 @@
 export default {
   name: "Menusport",
   methods: {
-    add(itemMenu){
+    add(itemMenu) {
       // this.$store.dispatch("addAction",itemMenu)
       this.$store.state.component = itemMenu;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -97,7 +98,7 @@ export default {
   font-weight: 600;
 }
 .bsl-link.popular:hover {
-  box-shadow: 0 0 10px #fa3d63cc;;
+  box-shadow: 0 0 10px #fa3d63cc;
   /* background-color: #fa3d63cc; */
   transition: box-shadow 0.5s;
   text-decoration: none;
@@ -233,4 +234,5 @@ export default {
     left: 25%;
   }
 }
+@import "@/css/theme.css";
 </style>

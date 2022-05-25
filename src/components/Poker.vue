@@ -111,4 +111,5 @@ export default {
   transform: translatey(0px);
   animation: float 1s ease-in-out infinite;
 }
+@import "@/css/theme.css";
 </style>

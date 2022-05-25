@@ -22,7 +22,7 @@
             class="nav-link mx-5 text-white"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
-            data-bs-whatever="@mdo"            
+            data-bs-whatever="@mdo"
             >เข้าสู่ระบบ</a
           >
         </li>
@@ -50,4 +50,5 @@ export default {};
   padding: 10px;
   border-radius: 40px;
 }
+@import "@/css/theme.css";
 </style>

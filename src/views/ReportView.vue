@@ -65,4 +65,5 @@ export default {
   top: 0;
   right: 0;
 }
+@import "@/css/theme.css";
 </style>

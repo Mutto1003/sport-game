@@ -691,4 +691,5 @@ nav a.router-link-exact-active {
   font-weight: 600;
   border: 0;
 }
+@import "@/css/theme.css";
 </style>
