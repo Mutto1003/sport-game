@@ -1,109 +1,207 @@
 <template>
-  <div class=""> 
-      
+  <div class="">
     <table id="example" class="table-fill" cellspacing="0" width="100%">
       <thead>
         <tr>
-			<th>Order</th>
-			<th>Description</th>
-			<th>Deadline</th>
-			<th>Status</th>
-			<th>Amount</th>
-		</tr>
+          <th rowspan="2">เวลา</th>
+          <th rowspan="2">คู่แข่งขัน</th>
+          <th colspan="3" class="text-center">FT.1X2</th>
+          <th colspan="3" class="text-center">ครึ่งแรก 1X2</th>
+          <th colspan="3" class="text-center">FT.DC</th>
+          <th colspan="3" class="text-center">ครึ่งแรก สองโอกาส</th>
+        </tr>
+        <tr>
+          <th>1</th>
+          <th>X</th>
+          <th>2</th>
+          <th>1</th>
+          <th>X</th>
+          <th>2</th>
+          <th>1X</th>
+          <th>12</th>
+          <th>2X</th>
+          <th>1X</th>
+          <th>12</th>
+          <th>2X</th>
+        </tr>
       </thead>
       <tbody class="table-hover">
         <tr>
-			<td>1</td>
-			<td>Alphabet puzzle</td>
-			<td>2016/01/15</td>
-			<td>Done</td>
-			<td data-order="1000">€1.000,00</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Layout for poster</td>
-			<td>2016/01/31</td>
-			<td>Planned</td>
-			<td data-order="1834">€1.834,00</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Image creation</td>
-			<td>2016/01/23</td>
-			<td>To Do</td>
-			<td data-order="1500">€1.500,00</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>Create font</td>
-			<td>2016/02/26</td>
-			<td>Done</td>
-			<td data-order="1200">€1.200,00</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>Sticker production</td>
-			<td>2016/02/18</td>
-			<td>Planned</td>
-			<td data-order="2100">€2.100,00</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>Glossy poster</td>
-			<td>2016/03/17</td>
-			<td>To Do</td>
-			<td data-order="899">€899,00</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>Beer label</td>
-			<td>2016/05/28</td>
-			<td>Confirmed</td>
-			<td data-order="2499">€2.499,00</td>
-		</tr>
+          <td>20.10</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+        </tr>
         <tr>
-			<td>7</td>
-			<td>Beer label</td>
-			<td>2016/05/28</td>
-			<td>Confirmed</td>
-			<td data-order="2499">€2.499,00</td>
-		</tr>
+          <td>20.10</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+        </tr>
         <tr>
-			<td>7</td>
-			<td>Beer label</td>
-			<td>2016/05/28</td>
-			<td>Confirmed</td>
-			<td data-order="2499">€2.499,00</td>
-		</tr>
+          <td>20.10</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+        </tr>
         <tr>
-			<td>7</td>
-			<td>Beer label</td>
-			<td>2016/05/28</td>
-			<td>Confirmed</td>
-			<td data-order="2499">€2.499,00</td>
-		</tr>
+          <td>20.10</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+        </tr>
         <tr>
-			<td>7</td>
-			<td>Beer label</td>
-			<td>2016/05/28</td>
-			<td>Confirmed</td>
-			<td data-order="2499">€2.499,00</td>
-		</tr>
+          <td>20.10</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+        </tr>
         <tr>
-			<td>7</td>
-			<td>Beer label</td>
-			<td>2016/05/28</td>
-			<td>Confirmed</td>
-			<td data-order="2499">€2.499,00</td>
-		</tr>
+          <td>20.10</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+        </tr>
         <tr>
-			<td>7</td>
-			<td>Beer label</td>
-			<td>2016/05/28</td>
-			<td>Confirmed</td>
-			<td data-order="2499">€2.499,00</td>
-		</tr>
-        
+          <td>20.10</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+        </tr>
+        <tr>
+          <td>20.10</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+        </tr>
+        <tr>
+          <td>20.10</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+        </tr>
+        <tr>
+          <td>20.10</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+        </tr>
+        <tr>
+          <td>20.10</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+          <td>0.5</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -171,7 +269,7 @@ div.table-title {
 th {
   color: #d5dde5;
   /* #4a4a48 */
-  background: #1b1e24; 
+  background: #1b1e24;
   border-bottom: 1px solid #9ea7af;
   border-right: 1px solid #343a45;
   /* font-size: 23px; */

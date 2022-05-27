@@ -1,286 +1,313 @@
 <template>
   <div class="">
-    <ul class="responsive-table">
-      <li class="table-header">
-        <div class="col col-1 font-t">เวลา</div>
-        <div class="col col-4 font-t">คู่แข่งขัน</div>
-        <div class="col col-1 font-t">FT. HDP</div>
-        <div class="col col-1 font-t">FT. O/U</div>
-        <div class="col col-1 font-t">FT. 1X2</div>
-        <div class="col col-1 font-t">1H. HDP</div>
-        <div class="col col-1 font-t">1H. O/U</div>
-        <div class="col col-1 font-t">1H. 1X2</div>
-      </li>
-      <li class="table-row" v-for="(item, index) in mCourses" :key="index">
-        <div class="col col-1" data-label="Job Id">{{ item.time }}</div>
-        <div class="col col-4" data-label="Job Id">
-          {{ item.them }} <span class="red_bg">{{ item.score }}</span>
-        </div>
-        <div class="col col-1" data-label="Job Id">
-          {{ item.price1 }} <br />
-          {{ item.price1 }}
-        </div>
-        <div class="col col-1" data-label="Job Id">
-          {{ item.price2 }} | {{ item.price1 }}
-        </div>
-        <div class="col col-1" data-label="Job Id">
-          {{ item.price3 }} | {{ item.price1 }}
-        </div>
-        <div class="col col-1" data-label="Job Id">
-          {{ item.price4 }} | {{ item.price1 }}
-        </div>
-        <div class="col col-1" data-label="Job Id">
-          {{ item.price5 }} | {{ item.price1 }}
-        </div>
-        <div class="col col-1" data-label="Job Id">
-          {{ item.price6 }} | {{ item.price1 }}
-        </div>
-      </li>
-    </ul>
+    <table id="example" class="table-fill" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th>เวลา</th>
+          <th>คู่แข่งขัน</th>
+          <th>FT.HDP</th>
+          <th>FT.O/U</th>
+          <th>FT.1X2</th>
+          <th>1H.HDP</th>
+          <th>1H.O/U</th>
+          <th>1H.1X2</th>
+        </tr>
+      </thead>
+      <tbody class="table-hover">
+        <tr>
+          <td>20.11</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <!-- <td data-order="1000">€1.000,00</td> -->
+        </tr>
+        <tr>
+          <td>20.11</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <!-- <td data-order="1000">€1.000,00</td> -->
+        </tr>
+        <tr>
+          <td>20.11</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <!-- <td data-order="1000">€1.000,00</td> -->
+        </tr>
+        <tr>
+          <td>20.11</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <!-- <td data-order="1000">€1.000,00</td> -->
+        </tr>
+        <tr>
+          <td>20.11</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <!-- <td data-order="1000">€1.000,00</td> -->
+        </tr>
+        <tr>
+          <td>20.11</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <!-- <td data-order="1000">€1.000,00</td> -->
+        </tr>
+        <tr>
+          <td>20.11</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <!-- <td data-order="1000">€1.000,00</td> -->
+        </tr>
+        <tr>
+          <td>20.11</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <!-- <td data-order="1000">€1.000,00</td> -->
+        </tr>
+        <tr>
+          <td>20.11</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <!-- <td data-order="1000">€1.000,00</td> -->
+        </tr>
+        <tr>
+          <td>20.11</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <!-- <td data-order="1000">€1.000,00</td> -->
+        </tr>
+        <tr>
+          <td>20.11</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <!-- <td data-order="1000">€1.000,00</td> -->
+        </tr>
+        <tr>
+          <td>20.11</td>
+          <td>Liverpool VS Man city</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <td>0.92</td>
+          <!-- <td data-order="1000">€1.000,00</td> -->
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      currentPage: 1,
-      perPage: 5,
-      mCourses: [
-        {
-          id: 1,
-          time: "20.10",
-          them: "Liverpool VS Man city",
-          score: "2-2",
-          price1: "-0.92",
-          price2: "2",
-          price3: "8",
-          price4: "4",
-          price5: "5",
-          price6: "6",
-        },
-        {
-          id: 2,
-          time: "20.10",
-          them: "Liverpool VS Man city",
-          score: "2-2",
-          price1: "-0.92",
-          price2: "2",
-          price3: "3",
-          price4: "4",
-          price5: "5",
-          price6: "6",
-        },
-        {
-          id: 3,
-          time: "20.10",
-          them: "Liverpool VS Man city",
-          score: "2-2",
-          price1: "-0.92",
-          price2: "2",
-          price3: "3",
-          price4: "4",
-          price5: "5",
-          price6: "6",
-        },
-        {
-          id: 4,
-          time: "20.10",
-          them: "Liverpool VS Man city",
-          score: "2-2",
-          price1: "-0.92",
-          price2: "2",
-          price3: "3",
-          price4: "4",
-          price5: "5",
-          price6: "6",
-        },
-        {
-          id: 5,
-          time: "20.10",
-          them: "Liverpool VS Man city",
-          score: "2-2",
-          price1: "-0.92",
-          price2: "2",
-          price3: "3",
-          price4: "4",
-          price5: "5",
-          price6: "6",
-        },
-        {
-          id: 6,
-          time: "20.10",
-          them: "Liverpool VS Man city",
-          score: "2-2",
-          price1: "-0.92",
-          price2: "2",
-          price3: "3",
-          price4: "4",
-          price5: "5",
-          price6: "6",
-        },
-        {
-          id: 7,
-          time: "20.10",
-          them: "Liverpool VS Man city",
-          score: "2-2",
-          price1: "-0.92",
-          price2: "2",
-          price3: "3",
-          price4: "4",
-          price5: "5",
-          price6: "6",
-        },
-        {
-          id: 8,
-          time: "20.10",
-          them: "Liverpool VS Man city",
-          score: "2-2",
-          price1: "-0.92",
-          price2: "2",
-          price3: "3",
-          price4: "4",
-          price5: "5",
-          price6: "6",
-        },
-        {
-          id: 9,
-          time: "20.10",
-          them: "Liverpool VS Man city",
-          score: "2-2",
-          price1: "-0.92",
-          price2: "2",
-          price3: "3",
-          price4: "4",
-          price5: "5",
-          price6: "6",
-        },
-        {
-          id: 10,
-          time: "20.10",
-          them: "Liverpool VS Man city",
-          score: "2-2",
-          price1: "-0.92",
-          price2: "2",
-          price3: "3",
-          price4: "4",
-          price5: "5",
-          price6: "6",
-        },
-        {
-          id: 11,
-          time: "20.10",
-          them: "Liverpool VS Man city",
-          score: "2-2",
-          price1: "-0.92",
-          price2: "2",
-          price3: "3",
-          price4: "4",
-          price5: "5",
-          price6: "6",
-        },
-        {
-          id: 12,
-          time: "20.10",
-          them: "Liverpool VS Man city",
-          score: "2-2",
-          price1: "-0.92",
-          price2: "2",
-          price3: "3",
-          price4: "4",
-          price5: "5",
-          price6: "6",
-        },
-      ],
-    };
-  },
-};
+export default {};
 </script>
 
 <style scoped>
-.font-t {
-  font-family: "IBM Plex Sans Thai", sans-serif;
-  -webkit-text-stroke-width: 1px;
-  /* -webkit-text-stroke-color: black; */
-  /* text-align: center; */
-  /* border: #000; */
-  color: #ffffff;
-}
-.red_bg {
-  width: 100%;
-  background-color: red;
-  color: #ffffff;
-  padding: 2px 5px 2px 5px;
-  border-radius: 5px;
-}
+@import "@/css/theme.css";
+/* .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: red;
+} */
+
+/* table {
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+} */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
 body {
-  font-family: "lato", sans-serif;
+  background-color: #3e94ec;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
 }
-.container {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 10px;
-  padding-right: 10px;
+
+div.table-title {
+  display: block;
+  margin: auto;
+  max-width: 600px;
+  padding: 5px;
+  width: 100%;
 }
-h2 {
-  font-size: 26px;
-  margin: 20px 0;
+
+.table-title h3 {
+  color: #fafafa;
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+/*** Table Styles **/
+
+.table-fill {
+  background: white;
+  border-radius: 3px;
+  border-collapse: collapse;
+  height: 320px;
+  margin: auto;
+  /* max-width: 600px; */
+  padding: 5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+
+th {
+  color: #d5dde5;
+  /* #4a4a48 */
+  background: #1b1e24;
+  border-bottom: 1px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  /* font-size: 23px; */
+  font-weight: 100;
+  padding: 13px;
+  text-align: left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align: middle;
+}
+
+th:first-child {
+  border-top-left-radius: 3px;
+}
+
+th:last-child {
+  border-top-right-radius: 3px;
+  border-right: none;
+}
+
+tr {
+  border-top: 1px solid #c1c3d1;
+  /* border-bottom-: 1px solid #c1c3d1; */
+  color: #666b85;
+  /* font-size: 16px; */
+  font-weight: normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+tr:hover td {
+  background: #4e5066;
+  color: #ffffff;
+  border-top: 1px solid #22262e;
+}
+
+tr:first-child {
+  border-top: none;
+}
+
+tr:last-child {
+  border-bottom: none;
+}
+
+tr:nth-child(odd) td {
+  background: #ebebeb;
+}
+
+tr:nth-child(odd):hover td {
+  background: #4e5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 3px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 3px;
+}
+
+td {
+  background: #ffffff;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 300;
+  /* font-size: 18px; */
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #c1c3d1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
   text-align: center;
 }
-h2 small {
-  font-size: 0.5em;
+
+th.text-right {
+  text-align: right;
 }
-.responsive-table li {
-  border-radius: 3px;
-  padding: 15px 25px;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+
+td.text-left {
+  text-align: left;
 }
-.responsive-table .table-header {
-  background-color: #4a4a48;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+
+td.text-center {
+  text-align: center;
 }
-.responsive-table .table-row {
-  background-color: #fff;
-  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+
+td.text-right {
+  text-align: right;
 }
-.responsive-table .col-1 {
-  flex-basis: 10%;
-}
-.responsive-table .col-2 {
-  flex-basis: 40%;
-}
-.responsive-table .col-3 {
-  flex-basis: 25%;
-}
-.responsive-table .col-4 {
-  flex-basis: 25%;
-}
-@media all and (max-width: 767px) {
-  .responsive-table .table-header {
-    display: none;
-  }
-  .responsive-table li {
-    display: block;
-  }
-  .responsive-table .col {
-    flex-basis: 100%;
-  }
-  .responsive-table .col {
-    display: flex;
-    padding: 10px 0;
-  }
-  .responsive-table .col:before {
-    color: #6c7a89;
-    padding-right: 10px;
-    content: attr(data-label);
-    flex-basis: 50%;
-    text-align: right;
-  }
-}
-@import "@/css/theme.css";
 </style>
