@@ -13,7 +13,7 @@
         <div class="col-2">
           <Menusport />
         </div>
-        <div class="col-10">
+        <div class="col ms-3">
           <component
             :is="(component = $store.getters.getcomponent)"
           ></component>

@@ -1013,6 +1013,11 @@
   resolved "https://registry.npmmirror.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@jobinsjp/vue3-datatable@^1.0.15":
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@jobinsjp/vue3-datatable/-/vue3-datatable-1.0.15.tgz#ecfac18e3c1d95625f573c46f3aa96dc50ee8f65"
+  integrity sha512-9qAyEiuCy3kHWjJhOcZxAUQJg1xc5pO977DujG0Vghv3jOEW1FXzsd1usvSgmvMVEWF7guH2PKbewjYN+fmi9A==
+
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
   resolved "https://registry.npmmirror.com/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz"
