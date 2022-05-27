@@ -29,7 +29,7 @@
         <tr>
           <td>20.10</td>
           <td>Liverpool VS Man city</td>
-          <td>0.5</td>
+          <td></td>
           <td>0.5</td>
           <td>0.5</td>
           <td>0.5</td>
@@ -208,7 +208,37 @@
 </template>
 
 <script>
-export default {};
+import Axios from "axios";
+export default {
+  name: "TableCorners",
+  data() {
+    return {
+      mConnerArray: [],
+      fixtureid: [],
+    };
+  },
+  mounted() {
+    let id;
+    // let team;
+    Axios.get(
+      "http://49.0.193.193:8021/api/v1/feed/live_score/list?league_name=LaLiga"
+    ).then((resultTeam) => {
+      this.fixtureid = resultTeam.data.data.live_scores;
+      for (let i = 0; i < this.fixtureid.length; i++) {
+        // console.log(this.fixtureid[i].fixture_id);
+        id = this.fixtureid[i].fixture_id;        
+      }
+      console.log(JSON.stringify(id));
+    });
+
+    Axios.get(
+      "http://49.0.193.193:8021/api/v1/feed/live_score/8504743/market/list"
+    ).then((result) => {
+      this.mConnerArray = result.data;
+      console.log(JSON.stringify(this.mConnerArray));
+    });
+  },
+};
 </script>
 
 <style scoped>

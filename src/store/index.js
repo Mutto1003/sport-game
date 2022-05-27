@@ -33,7 +33,7 @@ export default createStore({
 
     addAction(context,itemMenu) {
       context.commit("add",itemMenu);
-    },
+    },    
   },
   modules: {},
 });

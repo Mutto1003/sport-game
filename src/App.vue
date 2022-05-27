@@ -11,15 +11,20 @@
 import Loading from "@/components/Loading.vue";
 import Content from "@/components/Content.vue";
 export default {
-  name: "App",  
+  name: "App", 
+  data() {
+    return {
+      isLoading: true,
+    }
+  }, 
   components: {    
     Content,    
-    Loading,
+    Loading,    
   },
   mounted() {
     setTimeout(() => {
       this.isLoading = false;         
-    }, 1500);
+    }, 500);
     // this.isContent = true;
   },
 };
