@@ -64,8 +64,8 @@ export default {
   name: "Menusport",
   methods: {
     add(itemMenu) {
-      // this.$store.dispatch("addAction",itemMenu)
-      this.$store.state.component = itemMenu;
+      this.$store.dispatch("addAction",itemMenu)
+      // this.$store.state.component = itemMenu;
     },
   },
 };

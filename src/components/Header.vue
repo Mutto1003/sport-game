@@ -10,7 +10,7 @@
 
           <ul class="uk-navbar-nav uk-hidden-small">
             <li>
-              <a                
+              <a
                 v-on:click="clickLogin"
                 data-uk-dropdown="{'preventflip':'y'}"
                 aria-haspopup="true"
@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -46,10 +47,14 @@ export default {
     };
   },
   methods: {
-    clickLogin() {
+    async clickLogin() {
       this.$store.state.NavbarValue = "P";
       // alert("Hi");
       // this.isMenu = true;
+      let result = await axios.get(
+      "http://49.0.193.193:8021/api/v1/feed/live_score/list"
+    );
+    this.$store.state.live_score = result.data.data;
     },
     // We can add our functions here
   },

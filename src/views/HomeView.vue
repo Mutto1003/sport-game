@@ -458,14 +458,14 @@
                       <div
                         class="img-wrap uk-cover-background uk-position-relative"
                         style="
-                          background-image: url('@/assets/853d071dfa2f869fbd2a70dbcb3a8f5e.jpg');
+                          background-image: url('');
                           min-height: 280px;
                         "
                       >
                         <a href="news-single.html"></a>
                         <img
                           class="uk-invisible"
-                          src="@/assets/853d071dfa2f869fbd2a70dbcb3a8f5e.jpg"
+                          src=""
                           alt=""
                         />
                       </div>
@@ -498,14 +498,14 @@
                       <div
                         class="img-wrap uk-cover-background uk-position-relative"
                         style="
-                          background-image: url('@/assets/534579b3c373c09398691a46025fe5e6.jpg');
+                          background-image: url('');
                           min-height: 280px;
                         "
                       >
                         <a href="news-single.html"></a>
                         <img
                           class="uk-invisible"
-                          src="@/assets/534579b3c373c09398691a46025fe5e6.jpg"
+                          src=""
                           alt=""
                         />
                       </div>
@@ -631,6 +631,7 @@ export default {
 };
 </script>
 <style scoped>
+
 .mt {
   padding: 90px 0;
 }

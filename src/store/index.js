@@ -4,6 +4,7 @@ export default createStore({
   state: {
     NavbarValue: "P",
     component: 'Tsport',
+    live_score: [],
     // count: 'Tsport',
   },
   getters: {

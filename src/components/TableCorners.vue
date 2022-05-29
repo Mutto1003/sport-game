@@ -45,23 +45,7 @@
         <tr>
           <td>20.10</td>
           <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
+          <td></td>
           <td>0.5</td>
           <td>0.5</td>
           <td>0.5</td>
@@ -77,23 +61,7 @@
         <tr>
           <td>20.10</td>
           <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
+          <td></td>
           <td>0.5</td>
           <td>0.5</td>
           <td>0.5</td>
@@ -109,23 +77,7 @@
         <tr>
           <td>20.10</td>
           <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
+          <td></td>
           <td>0.5</td>
           <td>0.5</td>
           <td>0.5</td>
@@ -141,23 +93,7 @@
         <tr>
           <td>20.10</td>
           <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
+          <td></td>
           <td>0.5</td>
           <td>0.5</td>
           <td>0.5</td>
@@ -173,7 +109,7 @@
         <tr>
           <td>20.10</td>
           <td>Liverpool VS Man city</td>
-          <td>0.5</td>
+          <td></td>
           <td>0.5</td>
           <td>0.5</td>
           <td>0.5</td>
@@ -189,7 +125,7 @@
         <tr>
           <td>20.10</td>
           <td>Liverpool VS Man city</td>
-          <td>0.5</td>
+          <td></td>
           <td>0.5</td>
           <td>0.5</td>
           <td>0.5</td>
@@ -204,40 +140,56 @@
         </tr>
       </tbody>
     </table>
+    <button v-on:click="clickMe()">Test</button>
   </div>
 </template>
 
 <script>
-import Axios from "axios";
+import axios from "axios";
 export default {
   name: "TableCorners",
   data() {
-    return {
-      mConnerArray: [],
-      fixtureid: [],
+    return {         
     };
   },
   mounted() {
-    let id;
-    // let team;
-    Axios.get(
-      "http://49.0.193.193:8021/api/v1/feed/live_score/list?league_name=LaLiga"
-    ).then((resultTeam) => {
-      this.fixtureid = resultTeam.data.data.live_scores;
-      for (let i = 0; i < this.fixtureid.length; i++) {
-        // console.log(this.fixtureid[i].fixture_id);
-        id = this.fixtureid[i].fixture_id;        
-      }
-      console.log(JSON.stringify(id));
-    });
+    // let result = await axios.get(      
+    //   "http://49.0.193.193:8021/api/v1/feed/live_score/list"
+    // );
+    // this.$store.state.live_score = result.data.data;
+    // console.log(JSON.stringify(this.live_score));    
 
-    Axios.get(
-      "http://49.0.193.193:8021/api/v1/feed/live_score/8504743/market/list"
-    ).then((result) => {
-      this.mConnerArray = result.data;
-      console.log(JSON.stringify(this.mConnerArray));
-    });
+    // await axios
+    //   .get("http://49.0.193.193:8021/api/v1/feed/live_score/list")
+    //   .then((resultTeam) => {
+    //     this.live_score = resultTeam.data.data;
+    //     console.log(this.live_score);        
+    //   });   
+
+    // await axios
+    //   .get("http://49.0.193.193:8021/api/v1/feed/live_score/list")
+    //   .then((resultTeam) => {
+    //     this.fixtureid = resultTeam.data.data.live_scores;
+    //     console.log(this.fixtureid);
+    //     for (let i = 0; i < this.fixtureid.length; i++) {
+    //       console.log(this.fixtureid[i].fixture_id);
+    //       // Test = this.fixtureid[i].fixture_id;
+    //       // console.log(JSON.stringify(Test));
+    //     }
+    //   });
+
+    // axios.get(
+    //   `http://49.0.193.193:8021/api/v1/feed/live_score/${Test}/market/list`
+    // ).then((result) => {
+    //   this.mConnerArray = result.data;
+    //   console.log(JSON.stringify(this.mConnerArray));
+    // });
   },
+  methods:{
+    clickMe(){
+      console.log(JSON.stringify(this.$store.state.live_score))
+    }
+  }
 };
 </script>
 
