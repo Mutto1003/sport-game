@@ -26,9 +26,9 @@
         </tr>
       </thead>
       <tbody class="table-hover">
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
+        <tr v-for="(item, index) in live_scores" :key="index">
+          <td></td>
+          <td>{{item.fixture.Participants}}</td>
           <td></td>
           <td>0.5</td>
           <td>0.5</td>
@@ -42,105 +42,13 @@
           <td>0.5</td>
           <td>0.5</td>
         </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td></td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td></td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td></td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td></td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td></td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td></td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
+        
       </tbody>
     </table>
-    <button v-on:click="clickMe()">Test</button>
+    <!-- <button v-on:click="clickMe()">Test</button> -->
+    <div style="margin-top: 16px; color: red;">
+      #Spy {{ JSON.stringify(this.Team) }}
+    </div>
   </div>
 </template>
 
@@ -149,34 +57,37 @@ import axios from "axios";
 export default {
   name: "TableCorners",
   data() {
-    return {         
+    return {
+      live_scores:[], 
+      Team : null, 
+      fixtureid:[]
+      // TeamFootball:[
+      //   { title: "iOS", price: 11 },
+      //   { title: "Android", price: 12 },
+      //   { title: "Flutter", price: 13 }
+      // ]   
     };
   },
-  mounted() {
-    // let result = await axios.get(      
+  async mounted() {
+    // let result = await axios.get(
     //   "http://49.0.193.193:8021/api/v1/feed/live_score/list"
     // );
-    // this.$store.state.live_score = result.data.data;
-    // console.log(JSON.stringify(this.live_score));    
+    // this.live_scores = result.data.data.live_scores;       
 
-    // await axios
-    //   .get("http://49.0.193.193:8021/api/v1/feed/live_score/list")
-    //   .then((resultTeam) => {
-    //     this.live_score = resultTeam.data.data;
-    //     console.log(this.live_score);        
-    //   });   
-
-    // await axios
-    //   .get("http://49.0.193.193:8021/api/v1/feed/live_score/list")
-    //   .then((resultTeam) => {
-    //     this.fixtureid = resultTeam.data.data.live_scores;
-    //     console.log(this.fixtureid);
-    //     for (let i = 0; i < this.fixtureid.length; i++) {
-    //       console.log(this.fixtureid[i].fixture_id);
-    //       // Test = this.fixtureid[i].fixture_id;
-    //       // console.log(JSON.stringify(Test));
-    //     }
-    //   });
+    await axios
+      .get("http://49.0.193.193:8021/api/v1/feed/live_score/list")
+      .then((resultTeam) => {
+        this.live_scores = resultTeam.data.data.live_scores;
+        // console.log(this.live_scores);
+        let xxx = []
+        for (let i = 0; i < this.live_scores.length; i++) {
+          console.log(this.live_scores[i].fixture.Participants);
+          // Test = this.live_scores[i].fixture_id;             
+          xxx.push(this.live_scores[i].fixture.Participants)
+          console.log(JSON.stringify(this.Team));        
+        } 
+        this.Team = xxx            
+      });
 
     // axios.get(
     //   `http://49.0.193.193:8021/api/v1/feed/live_score/${Test}/market/list`
@@ -186,9 +97,7 @@ export default {
     // });
   },
   methods:{
-    clickMe(){
-      console.log(JSON.stringify(this.$store.state.live_score))
-    }
+    
   }
 };
 </script>

@@ -54,7 +54,7 @@ export default {
       let result = await axios.get(
       "http://49.0.193.193:8021/api/v1/feed/live_score/list"
     );
-    this.$store.state.live_score = result.data.data;
+    this.$store.state.live_score = result.data.data.live_scores;
     },
     // We can add our functions here
   },
