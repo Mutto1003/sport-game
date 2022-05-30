@@ -23,9 +23,10 @@
         </tr>
       </thead>
       <tbody class="table-hover">
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
+        <tr v-for="(item, index) in live_scores" :key="index">
+          <td>{{ item.fixture.StartDate }}</td>
+          <td>{{ item.fixture.Participants[0].Name }} VS
+            {{ item.fixture.Participants[1].Name }}</td>
           <td>0.5</td>
           <td>0.5</td>
           <td>0.5</td>
@@ -37,164 +38,41 @@
           <td>0.5</td>
           <td>0.5</td>
           <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
-        <tr>
-          <td>20.10</td>
-          <td>Liverpool VS Man city</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>
+        </tr>        
       </tbody>
     </table>
   </div>
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  name: "TableTeamWin",
+  data() {
+    return {
+      live_scores: [],
+      markets: [],
+      fixtureid: [],
+    };
+  },
+  async mounted() {
+    // Get for loop
+    await axios
+      .get("http://49.0.193.193:8021/api/v1/feed/live_score/list")
+      .then((resultTeam) => {
+        this.live_scores = resultTeam.data.data.live_scores;
+        // console.log(this.live_scores);
+        let itemTeam = [];
+        for (let i = 0; i < this.live_scores.length; i++) {
+          console.log(this.live_scores[i].fixture.Participants);
+          // Test = this.live_scores[i].fixture_id;
+          itemTeam.push(this.live_scores[i].fixture.Participants);
+          console.log(JSON.stringify(this.Team));
+        }
+        this.Team = itemTeam;
+      });
+  },
+};
 </script>
 
 <style scoped>

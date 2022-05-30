@@ -27,8 +27,11 @@
       </thead>
       <tbody class="table-hover">
         <tr v-for="(item, index) in live_scores" :key="index">
-          <td></td>
-          <td>{{item.fixture.Participants}}</td>
+          <td>{{ item.fixture.StartDate }}</td>
+          <td>
+            {{ item.fixture.Participants[0].Name }} VS
+            {{ item.fixture.Participants[1].Name }}
+          </td>
           <td></td>
           <td>0.5</td>
           <td>0.5</td>
@@ -42,12 +45,11 @@
           <td>0.5</td>
           <td>0.5</td>
         </tr>
-        
       </tbody>
     </table>
     <!-- <button v-on:click="clickMe()">Test</button> -->
-    <div style="margin-top: 16px; color: red;">
-      #Spy {{ JSON.stringify(this.Team) }}
+    <div style="margin-top: 16px; color: red">
+      #Spy {{ JSON.stringify(this.markets) }}
     </div>
   </div>
 </template>
@@ -58,36 +60,59 @@ export default {
   name: "TableCorners",
   data() {
     return {
-      live_scores:[], 
-      Team : null, 
-      fixtureid:[]
-      // TeamFootball:[
-      //   { title: "iOS", price: 11 },
-      //   { title: "Android", price: 12 },
-      //   { title: "Flutter", price: 13 }
-      // ]   
+      live_scores: [],
+      markets: [],
+      fixtureid: [],      
     };
   },
   async mounted() {
+    // Get
     // let result = await axios.get(
     //   "http://49.0.193.193:8021/api/v1/feed/live_score/list"
     // );
-    // this.live_scores = result.data.data.live_scores;       
+    // this.live_scores = result.data.data.live_scores;
 
+    // Get for loop
     await axios
       .get("http://49.0.193.193:8021/api/v1/feed/live_score/list")
       .then((resultTeam) => {
         this.live_scores = resultTeam.data.data.live_scores;
         // console.log(this.live_scores);
-        let xxx = []
+        let itemMarkets = [];
+        let id;
         for (let i = 0; i < this.live_scores.length; i++) {
-          console.log(this.live_scores[i].fixture.Participants);
-          // Test = this.live_scores[i].fixture_id;             
-          xxx.push(this.live_scores[i].fixture.Participants)
-          console.log(JSON.stringify(this.Team));        
-        } 
-        this.Team = xxx            
+          // console.log(this.live_scores[i].fixture_id);
+          id = this.live_scores[i].fixture_id;
+          console.log(JSON.stringify(id));
+          // itemTeam.push(this.live_scores[i].fixture.Participants);
+          axios
+            .get(
+              `http://49.0.193.193:8021/api/v1/feed/live_score/${id}/market/list`
+            )
+            .then((resultM) => {
+              itemMarkets.push(resultM.data.data.markets);
+              console.log(JSON.stringify(itemMarkets));
+            });
+          // console.log(JSON.stringify(itemMarkets));
+        }
+        this.markets = itemMarkets;
       });
+
+    // Get for loop
+    // await axios
+    //   .get("http://49.0.193.193:8021/api/v1/feed/live_score/list")
+    //   .then((resultTeam) => {
+    //     this.live_scores = resultTeam.data.data.live_scores;
+    //     // console.log(this.live_scores);
+    //     let itemTeam = [];
+    //     for (let i = 0; i < this.live_scores.length; i++) {
+    //       console.log(this.live_scores[i].fixture.Participants);
+    //       // Test = this.live_scores[i].fixture_id;
+    //       itemTeam.push(this.live_scores[i].fixture.Participants);
+    //       console.log(JSON.stringify(this.Team));
+    //     }
+    //     this.Team = itemTeam;
+    //   });
 
     // axios.get(
     //   `http://49.0.193.193:8021/api/v1/feed/live_score/${Test}/market/list`
@@ -96,9 +121,7 @@ export default {
     //   console.log(JSON.stringify(this.mConnerArray));
     // });
   },
-  methods:{
-    
-  }
+  methods: {},
 };
 </script>
 
