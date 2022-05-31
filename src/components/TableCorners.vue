@@ -26,13 +26,10 @@
         </tr>
       </thead>
       <tbody class="table-hover">
-        <tr v-for="(item, index) in live_scores" :key="index">
-          <td>{{ item.fixture.StartDate }}</td>
-          <td>
-            {{ item.fixture.Participants[0].Name }} VS
-            {{ item.fixture.Participants[1].Name }}
-          </td>
-          <td></td>
+        <tr v-for="(item, index) in itemMarkets" :key="index">
+          <td>{{ item.iTime }}</td>
+          <td>{{ item.iTeam[0].Name }} VS {{ item.iTeam[1].Name }}</td>
+          <td>{{}}</td>
           <td>0.5</td>
           <td>0.5</td>
           <td>0.5</td>
@@ -48,9 +45,9 @@
       </tbody>
     </table>
     <!-- <button v-on:click="clickMe()">Test</button> -->
-    <div style="margin-top: 16px; color: red">
+    <!-- <div style="margin-top: 16px; color: red">
       #Spy {{ JSON.stringify(this.markets) }}
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -62,7 +59,8 @@ export default {
     return {
       live_scores: [],
       markets: [],
-      fixtureid: [],      
+      itemMarkets: [],
+      fixtureid: [],
     };
   },
   async mounted() {
@@ -77,25 +75,40 @@ export default {
       .get("http://49.0.193.193:8021/api/v1/feed/live_score/list")
       .then((resultTeam) => {
         this.live_scores = resultTeam.data.data.live_scores;
-        // console.log(this.live_scores);
-        let itemMarkets = [];
         let id;
         for (let i = 0; i < this.live_scores.length; i++) {
-          // console.log(this.live_scores[i].fixture_id);
           id = this.live_scores[i].fixture_id;
-          console.log(JSON.stringify(id));
-          // itemTeam.push(this.live_scores[i].fixture.Participants);
+          // console.log(id);
           axios
             .get(
               `http://49.0.193.193:8021/api/v1/feed/live_score/${id}/market/list`
             )
             .then((resultM) => {
-              itemMarkets.push(resultM.data.data.markets);
-              console.log(JSON.stringify(itemMarkets));
+              this.markets = resultM.data.data.markets;
+              let cItem;
+              if (resultM.data.data.markets === null) {
+                cItem = {
+                  iID:this.live_scores[i].fixture_id,
+                  iTime: this.live_scores[i].fixture.StartDate,
+                  iTeam: this.live_scores[i].fixture.Participants,
+                  p: "",
+                };
+                this.itemMarkets.push(cItem);
+              } else {
+                cItem = {
+                  iID:this.live_scores[i].fixture_id,
+                  iTime: this.live_scores[i].fixture.StartDate,
+                  iTeam: this.live_scores[i].fixture.Participants,
+                  m:this.markets[i],
+                  // p: this.markets[i].market_id,
+                };
+                this.itemMarkets.push(cItem);
+                console.log(JSON.stringify(this.itemMarkets));
+              }
             });
           // console.log(JSON.stringify(itemMarkets));
         }
-        this.markets = itemMarkets;
+        // console.log(JSON.stringify(this.markets));
       });
 
     // Get for loop

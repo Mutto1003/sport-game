@@ -60,16 +60,7 @@ export default {
     await axios
       .get("http://49.0.193.193:8021/api/v1/feed/live_score/list")
       .then((resultTeam) => {
-        this.live_scores = resultTeam.data.data.live_scores;
-        // console.log(this.live_scores);
-        let itemTeam = [];
-        for (let i = 0; i < this.live_scores.length; i++) {
-          console.log(this.live_scores[i].fixture.Participants);
-          // Test = this.live_scores[i].fixture_id;
-          itemTeam.push(this.live_scores[i].fixture.Participants);
-          console.log(JSON.stringify(this.Team));
-        }
-        this.Team = itemTeam;
+        this.live_scores = resultTeam.data.data.live_scores;  
       });
   },
 };
