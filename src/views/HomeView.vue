@@ -656,7 +656,7 @@ nav a.router-link-exact-active {
 .bg-1 {
   width: 100%;
   height: 450px;
-  background-image: url("@/assets/main-slider-img.jpg");
+  background-image: url("@/assets/banerSPBook-010.jpeg");
   position: absolute;
   top: 0;
   right: 0;

@@ -3,9 +3,9 @@
     <Loading v-if="isLoading"></Loading>
     <HeaderSuccess v-if="isHeader" class="fixed-top" />
     <Carousel class="mtc" />
-    <Poker class="mt-5 mb-5" />
+    <Poker class="mt-5 mb-5" />    
     <div class="our-history-title">
-      <h2>ราคาต่อรอง <span>& สูงต่ำ</span></h2>
+      <h2 class="font-t">{{$store.getters.getTitleMenufront}}<span>{{$store.getters.getTitleMenuback}}</span></h2>
     </div>
     <ImgAnimation />
     <div class="container">
@@ -189,14 +189,23 @@ export default {
 </script>
 
 <style scoped>
+.font-t {
+  font-family: "IBM Plex Sans Thai", sans-serif;
+  /* -webkit-text-stroke-width: 1px; */
+  /* -webkit-text-stroke-color: black; */
+  /* text-align: center; */
+  /* border: #000; */
+  /* color: #ffffff; */
+}
+
 .mtc {
   margin-top: 150px;
 }
 
 .bg-1 {
   width: 100%;
-  height: 450px;
-  background-image: url("@/assets/main-slider-img.jpg");
+  height: 60%;
+  background-image: url("@/assets/banerSPBook-010.jpeg");
   position: absolute;
   top: 0;
   right: 0;

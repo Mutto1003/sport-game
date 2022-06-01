@@ -19,24 +19,28 @@
               </div>
               <div class="footer-socials">
                 <div class="social-top">
-                  <img src="@/assets/team-ava5.png" alt="">
-                  <img src="@/assets/team-ava5.png" alt="">
-                  <img src="@/assets/team-ava5.png" alt="">
-                  <img src="@/assets/team-ava5.png" alt="">
-                  <img src="@/assets/team-ava5.png" alt="">
-                  <img src="@/assets/team-ava5.png" alt="">
-                  <img src="@/assets/team-ava5.png" alt="">
+                  <img src="@/assets/team-ava5.png" alt="" />
+                  <img src="@/assets/team-ava5.png" alt="" />
+                  <img src="@/assets/team-ava5.png" alt="" />
+                  <img src="@/assets/team-ava5.png" alt="" />
+                  <img src="@/assets/team-ava5.png" alt="" />
+                  <img src="@/assets/team-ava5.png" alt="" />
+                  <img src="@/assets/team-ava5.png" alt="" />
                 </div>
               </div>
               <div class="clear"></div>
 
-              <p class="footer-about-text">
-                Cras convallis feugiat felis eget venenatis. Sed leo tellus,
-                luctus eget ante quis, rutrum dignissim enim. Morbi efficitur
-                tellus non mauris tincidunt feugiat. Vestibulum quis nunc in
-                nibh eleifend convallis. Vestibulum nec viverra dui. Suspendisse
-                vel neque eros. Donec tincidunt tempus massa sed vehicula.
-                Integer ullamcorper at elit eu commodo.
+              <p class="footer-about-text font-t">
+                Sportbook เว็บ แทงบอลออนไลน์ อันดับ 1 ที่เป็นที่นิยมใช้บริการ
+                มากที่สุดในประเทศไทย รับเดิมพันกีฬาออนไลน์และคาสิโนทุกประเภท
+                ฟุตบอลไทย ฟุตบอลต่างประเทศ วิเคราะห์บอล ราคาแทง ราคาน้ำ ทุกคู่
+                ทุกลีก ไม่ว่าจะเป็น พรีเมียร์ลีก, ลาลีกา, เซเรีย อา, บุนเดสลีกา,
+                ลีกเอิง, เจลีก, ไทยลีก ฯลฯ สามารถแทงบอล ผ่านเว็บไซต์ หรือ
+                บนมือถือ ( Iphone หรือ Android )
+                ซึ่งมีระบบรักษาความปลอดภัยที่เชื่อถือได้และมีมาตรฐานสากลระดับโลก
+                ในการรองรับการแทงบอลออนไลน์ผ่านเน็ต และ
+                พนันกีฬาออนไลน์หรือคาสิโนที่หลากหลาย พร้อมให้บริการตลอด 24
+                ชั่วโมง
               </p>
             </div>
           </div>
@@ -484,5 +488,14 @@ export default {};
 </script>
 
 <style scoped>
-@import "@/css/theme.css"
+@import "@/css/theme.css";
+
+.font-t {
+  font-family: "IBM Plex Sans Thai", sans-serif;
+  /* -webkit-text-stroke-width: 1px; */
+  /* -webkit-text-stroke-color: black; */
+  /* text-align: center; */
+  /* border: #000; */
+  /* color: #ffffff; */
+}
 </style>

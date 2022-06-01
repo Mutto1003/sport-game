@@ -52,10 +52,8 @@
               <a href="">Score</a>
             </li>
 
-            <li
-              
-            >
-              <a @click="$router.push('/')" href="">Logout</a>
+            <li>
+              <a @click="$router.push('/')" href="#">Logout</a>
             </li>
 
             <!-- <li><a href="category.html">Shop</a></li>

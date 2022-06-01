@@ -5,34 +5,34 @@
         <div class="bsl-menu">
           <a @click="add('Tsport')" class="bsl-link popular"
             ><div class="bsl-icon">
-              <!-- <img src="/assets/popular.fca78488.svg" class="bsli" /> -->
+              <img src="@/assets/icon-02.png" class="bsli" />
             </div>
             <div class="bsl-title font-t">ราคาต่อรอง & สูงต่ำ</div></a
           ><a
             @click="add('Tgoal')"
             class="router-link-active router-link-exact-active bsl-link new"
             ><div class="bsl-icon">
-              <!-- <img src="/assets/new.8e600219.svg" class="bsli" /> -->
+              <img src="@/assets/icon-03.png" class="bsli" />
             </div>
             <div class="bsl-title font-t">คี่/คู่ & ประตูรวม</div></a
           ><a @click="add('Tcorner')" class="bsl-link corner"
             ><div class="bsl-icon">
-              <!-- <img src="/assets/corner.dc1d9994.svg" class="bsli" /> -->
+              <img src="@/assets/icon-04.png" class="bsli" />
             </div>
             <div class="bsl-title font-t">1X2 & สองโอกาส</div></a
           ><a @click="add('Tscore')" class="bsl-link casino"
             ><div class="bsl-icon">
-              <!-- <img src="/assets/casino.6b269c4e.svg" class="bsli" /> -->
+              <img src="@/assets/icon-05.png" class="bsli" />
             </div>
             <div class="bsl-title font-t">ครึ่งเวลา / เต็มเวลา</div></a
           ><a @click="add('TScore')" class="bsl-link slot"
             ><div class="bsl-icon">
-              <!-- <img src="/assets/slot.849d8d0f.svg" class="bsli" /> -->
+              <img src="@/assets/icon-06.png" class="bsli" />
             </div>
             <div class="bsl-title font-t">ทายผลสกอร์</div></a
           ><a @click="add('Twin')" class="bsl-link fishing"
             ><div class="bsl-icon">
-              <!-- <img src="/assets/fishing.811d1996.svg" class="bsli" /> -->
+              <img src="@/assets/icon-07.png" class="bsli" />
             </div>
             <div class="bsl-title font-t">ทายผลผู้ชนะ</div></a
           >
@@ -177,11 +177,15 @@ export default {
   margin-bottom: 25px;
 }
 .bsl-icon {
-  width: 20%;
+  width: 15%;
   margin-right: 15px;
 }
 .bsl-title {
   text-align: left;
+}
+
+.bsli{
+  width: 100%;
 }
 
 .bsl-link.reportnoti {
