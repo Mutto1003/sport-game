@@ -29,6 +29,25 @@
       </tbody>
     </table>
   </div>
+  <div class="row">
+    <div class="col">
+      <div class="mt-5 d-flex justify-content-start">
+        <p>Showing 0 to 0 of 0 entries</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="pagination mt-5 d-flex justify-content-end">
+        <a href="">&laquo;</a>
+        <a href="">1</a>
+        <a class="active" href="#">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <a href="">&raquo;</a>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -66,6 +85,16 @@ export default {
 } */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+.font-t {
+  font-family: "IBM Plex Sans Thai", sans-serif;
+  /* -webkit-text-stroke-width: 1px; */
+  /* -webkit-text-stroke-color: black; */
+  /* text-align: center; */
+  /* border: #000; */
+  /* color: #ffffff; */
+}
+.bo
 
 body {
   background-color: #3e94ec;
@@ -207,5 +236,37 @@ td.text-center {
 
 td.text-right {
   text-align: right;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 4px 12px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: #1b1e24;
+  color: white;
+  border: 1px solid #1b1e24;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.pagination a:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination a:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 </style>

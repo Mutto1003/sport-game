@@ -49,6 +49,25 @@
       #Spy {{ JSON.stringify(this.markets) }}
     </div> -->
   </div>
+  <div class="row">
+    <div class="col">
+      <div class="mt-5 d-flex justify-content-start">
+        <p>Showing 0 to 0 of 0 entries</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="pagination mt-5 d-flex justify-content-end">
+        <a href="">&laquo;</a>
+        <a href="">1</a>
+        <a class="active" href="#">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <a href="">&raquo;</a>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -78,7 +97,8 @@ export default {
         let id;
         for (let i = 0; i < this.live_scores.length; i++) {
           id = this.live_scores[i].fixture_id;
-          // console.log(id);
+          // console.log(id);         
+
           axios
             .get(
               `http://49.0.193.193:8021/api/v1/feed/live_score/${id}/market/list`
@@ -88,7 +108,7 @@ export default {
               let cItem;
               if (resultM.data.data.markets === null) {
                 cItem = {
-                  iID:this.live_scores[i].fixture_id,
+                  iID: this.live_scores[i].fixture_id,
                   iTime: this.live_scores[i].fixture.StartDate,
                   iTeam: this.live_scores[i].fixture.Participants,
                   p: "",
@@ -96,14 +116,14 @@ export default {
                 this.itemMarkets.push(cItem);
               } else {
                 cItem = {
-                  iID:this.live_scores[i].fixture_id,
+                  iID: this.live_scores[i].fixture_id,
                   iTime: this.live_scores[i].fixture.StartDate,
                   iTeam: this.live_scores[i].fixture.Participants,
-                  m:this.markets[i],
+                  m: this.markets[i],
                   // p: this.markets[i].market_id,
                 };
                 this.itemMarkets.push(cItem);
-                console.log(JSON.stringify(this.itemMarkets));
+                // console.log(JSON.stringify(this.itemMarkets));
               }
             });
           // console.log(JSON.stringify(itemMarkets));
@@ -292,5 +312,37 @@ td.text-center {
 
 td.text-right {
   text-align: right;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 4px 12px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: #1b1e24;
+  color: white;
+  border: 1px solid #1b1e24;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.pagination a:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination a:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 </style>

@@ -124,9 +124,8 @@
     <div>
       <button @click="component = 'Tcorner'">show from 1</button>
       <button @click="component = 'Tscore'">show from 1</button>
-    </div> -->
-    <Pagination />
-    <Footer />
+    </div> -->    
+    <Footer class="mt-5"/>
   </div>
 </template>
 
@@ -142,7 +141,6 @@ import TableScore from "@/components/TableScore.vue";
 import TableTeamWin from "@/components/TableTeamWin.vue";
 import TableTotalGoal from "@/components/TableTotalGoal.vue";
 import Menusport from "@/components/Menusport.vue";
-import Pagination from "@/components/Pagination.vue";
 import Footer from "@/components/Footer.vue";
 import Poker from "@/components/Poker.vue";
 
@@ -169,8 +167,7 @@ export default {
     TScore: TableScore,
     Tgoal: TableTotalGoal,
     Twin: TableTeamWin,
-    Menusport,
-    Pagination,
+    Menusport,    
     Footer,
   },
   mounted() {

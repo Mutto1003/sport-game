@@ -5,42 +5,56 @@
         <tr>
           <th rowspan="2">เวลา</th>
           <th rowspan="2">คู่แข่งขัน</th>
-          <th colspan="6" class="text-center">เต็มเวลา</th>
-          <th colspan="5" class="text-center">ครึ่งแรก</th>
+          <th colspan="2" class="text-center">ครึ่งแรก</th>
+          <th colspan="2" class="text-center">ครึ่งหลัง</th>
+          <th colspan="2" class="text-center">ทีมเหย้า</th>
+          <th colspan="2" class="text-center">ทีมเยือน</th>
         </tr>
         <tr>
           <th>คี่</th>
           <th>คู่</th>
-          <th>0-1</th>
-          <th>2-3</th>
-          <th>4-6</th>
-          <th>7&มากกว่า</th>
           <th>คี่</th>
           <th>คู่</th>
-          <th>0-1</th>
-          <th>2-3</th>
-          <th>4&มากกว่า</th>
+          <th>คี่</th>
+          <th>คู่</th>
+          <th>คี่</th>
+          <th>คู่</th>
         </tr>
       </thead>
       <tbody class="table-hover">
-        <tr v-for="(item, index) in live_scores" :key="index">
-          <td>{{ item.fixture.StartDate }}</td>
-          <td>{{ item.fixture.Participants[0].Name }} VS
-            {{ item.fixture.Participants[1].Name }}</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-        </tr>        
+        <tr v-for="(item, index) in itemMarkets" :key="index">
+          <td>{{ item.iTime }}</td>
+          <td>{{ item.iTeam[0].Name }} VS {{ item.iTeam[1].Name }}</td>
+          <td>{{ item.iEven_OneST }}</td>
+          <td>{{ item.iOdd_OneST }}</td>
+          <td>{{ item.iEven_TwoST }}</td>
+          <td>{{ item.iOdd_TwoST }}</td>
+          <td>{{ item.iEven_HomeTeam }}</td>
+          <td>{{ item.iOdd_HomeTeam }}</td>
+          <td>{{ item.iEven_AwayTeam }}</td>
+          <td>{{ item.iOdd_AwayTeam }}</td>
+        </tr>
       </tbody>
     </table>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="mt-5 d-flex justify-content-start">
+        <p>Showing 0 to 0 of 0 entries</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="pagination mt-5 d-flex justify-content-end">
+        <a href="">&laquo;</a>
+        <a href="">1</a>
+        <a class="active" href="#">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <a href="">&raquo;</a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -52,15 +66,123 @@ export default {
     return {
       live_scores: [],
       markets: [],
+      itemMarkets: [],
       fixtureid: [],
     };
   },
+  computed: {},
   async mounted() {
     // Get for loop
     await axios
       .get("http://49.0.193.193:8021/api/v1/feed/live_score/list")
       .then((resultTeam) => {
-        this.live_scores = resultTeam.data.data.live_scores;  
+        this.live_scores = resultTeam.data.data.live_scores;
+        let id;
+        for (let i = 0; i < this.live_scores.length; i++) {
+          id = this.live_scores[i].fixture_id;
+          // console.log(id);
+          axios
+            .get(
+              `http://49.0.193.193:8021/api/v1/feed/live_score/${id}/market/list`
+            )
+            .then((resultM) => {
+              this.markets = resultM.data.data.markets;
+              let Onest, Twost, HomeTeam, AwayTeam;
+              let cItem;
+              if (this.markets === null) {
+                cItem = {
+                  iID: this.live_scores[i].fixture_id,
+                  iTime: this.live_scores[i].fixture.StartDate,
+                  iTeam: this.live_scores[i].fixture.Participants,
+                };
+                this.itemMarkets.push(cItem);
+              } else if (this.markets !== null) {
+                let One_Even,
+                  One_Odd,
+                  Two_Even,
+                  Two_Odd,
+                  HomeTeam_Even,
+                  HomeTeam_Odd,
+                  AwayTeam_Even,
+                  AwayTeam_Odd;
+                Onest = this.markets.filter((elem) => {
+                  if (elem.market_id == "72") {
+                    // console.log(elem)
+                    return elem;
+                  }
+                });
+                if (Onest[0] == null) {
+                  One_Even = "";
+                  One_Odd = "";
+                } else if (Onest[0] !== null) {
+                  One_Even = Onest[0].bets[0].Price;
+                  One_Odd = Onest[0].bets[1].Price;
+                }
+
+                Twost = this.markets.filter((elem) => {
+                  if (elem.market_id == "73") {
+                    // console.log(elem)
+                    return elem;
+                  }
+                });
+                if (Twost[0] == null) {
+                  Two_Even = "";
+                  Two_Odd = "";
+                } else if (Twost[0] !== null) {
+                  Two_Even = Twost[0].bets[0].Price;
+                  Two_Odd = Twost[0].bets[1].Price;
+                }
+
+                HomeTeam = this.markets.filter((elem) => {
+                  if (elem.market_id == "198") {
+                    // console.log(elem)
+                    return elem;
+                  }
+                });
+                if (HomeTeam[0] == null) {
+                  HomeTeam_Even = "";
+                  HomeTeam_Odd = "";
+                } else if (HomeTeam[0] !== null) {
+                  HomeTeam_Even = HomeTeam[0].bets[0].Price;
+                  HomeTeam_Odd = HomeTeam[0].bets[1].Price;
+                }
+
+                AwayTeam = this.markets.filter((elem) => {
+                  if (elem.market_id == "199") {
+                    // console.log(elem)
+                    return elem;
+                  }
+                });
+                if (AwayTeam[0] == null) {
+                  AwayTeam_Even = "";
+                  AwayTeam_Odd = "";
+                } else if (AwayTeam[0] !== null) {
+                  AwayTeam_Even = AwayTeam[0].bets[0].Price;
+                  AwayTeam_Odd = AwayTeam[0].bets[1].Price;
+                }
+
+                cItem = {
+                  iID: this.live_scores[i].fixture_id,
+                  iTime: this.live_scores[i].fixture.StartDate,
+                  iTeam: this.live_scores[i].fixture.Participants,
+                  iEven_OneST: One_Even,
+                  iOdd_OneST: One_Odd,
+                  iEven_TwoST: Two_Even,
+                  iOdd_TwoST: Two_Odd,
+                  iEven_HomeTeam: HomeTeam_Even,
+                  iOdd_HomeTeam: HomeTeam_Odd,
+                  iEven_AwayTeam: AwayTeam_Even,
+                  iOdd_AwayTeam: AwayTeam_Odd,
+                };
+                this.itemMarkets.push(cItem);
+              }
+
+              // this.itemMarkets.push(cItem);
+              // console.log(JSON.stringify(this.markets_onePeriod));
+            });
+          // console.log(JSON.stringify(itemMarkets));
+        }
+        // console.log(JSON.stringify(this.markets));
       });
   },
 };
@@ -220,5 +342,37 @@ td.text-center {
 
 td.text-right {
   text-align: right;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 4px 12px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: #1b1e24;
+  color: white;
+  border: 1px solid #1b1e24;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.pagination a:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination a:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 </style>
