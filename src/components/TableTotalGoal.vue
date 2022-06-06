@@ -28,7 +28,13 @@
           <td>{{ item.iEven_OneST }}</td>
           <td>{{ item.iOdd_OneST }}</td>
           <td>{{ item.iEven_TwoST }}</td>
-          <td>{{ item.iOdd_TwoST }}</td>
+          <td
+            @click="
+              showAlert(item.iOdd_TwoST, item.iTeam[0].Name, item.iTeam[1].Name,'คู่')
+            "
+          >
+            {{ item.iOdd_TwoST }}
+          </td>
           <td>{{ item.iEven_HomeTeam }}</td>
           <td>{{ item.iOdd_HomeTeam }}</td>
           <td>{{ item.iEven_AwayTeam }}</td>
@@ -68,9 +74,91 @@ export default {
       markets: [],
       itemMarkets: [],
       fixtureid: [],
+      TotalPrice : "",      
     };
   },
   computed: {},
+  methods: {
+    showAlert(value, TeamH, TeamA, Type) {
+      // Use sweetalert2
+      const inputValue = 0    
+      
+      this.$swal
+        .fire({
+          title: TeamH + `<span style='color:red'> VS </span>` + TeamA,
+          text: "sssss",
+          html: `
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+              </div>
+              <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">${Type} : <span style='color:red'> ${value} </span>฿</h5>
+                </div>
+              </div>
+            </div> 
+              <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">จำนวนเงิน :<input type="number" id="price" v-model="${inputValue}" class="swal2-input" placeholder="">฿</h5>
+                </div>
+              </div>
+            </div>
+              <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">ยอดเงินที่รับ : <span style='color:red'> ${inputValue} </span>฿</h5>
+                </div>
+              </div>
+            </div>              
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">เดิมพันขั้นสูงสุด : <span style='color:red'> 10 </span>฿</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">เดิมพันสูงสุด : <span style='color:red'> 15000 </span>฿</h5>   
+                </div>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>`,
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          cancelButtonText : "ยกเลิก",
+          confirmButtonText: "ยืนยันทำรายการ",
+          preConfirm: () => {
+            const price = this.$swal.getPopup().querySelector("#price").value;            
+            if (!price) {
+              this.$swal.showValidationMessage(
+                `Please enter price `
+              );
+            }
+            return { price: price };
+          },
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            this.$swal.fire(
+              "Success!",
+              "ทำรายการสำเร็จ",
+              "success"
+            );
+          }
+        });
+      // this.$swal();
+    },
+    
+  },
   async mounted() {
     // Get for loop
     await axios
@@ -208,6 +296,10 @@ body {
   font-size: 16px;
   font-weight: 400;
   text-rendering: optimizeLegibility;
+}
+
+.color-vs {
+  color: red;
 }
 
 div.table-title {
