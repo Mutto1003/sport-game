@@ -25,20 +25,102 @@
         <tr v-for="(item, index) in itemMarkets" :key="index">
           <td>{{ item.iTime }}</td>
           <td>{{ item.iTeam[0].Name }} VS {{ item.iTeam[1].Name }}</td>
-          <td>{{ item.iEven_OneST }}</td>
-          <td>{{ item.iOdd_OneST }}</td>
-          <td>{{ item.iEven_TwoST }}</td>
           <td
             @click="
-              showAlert(item.iOdd_TwoST, item.iTeam[0].Name, item.iTeam[1].Name,'คู่')
+              showAlert(
+                item.iEven_OneST,
+                item.iTeam[0].Name,
+                item.iTeam[1].Name,
+                'คี่'
+              )
+            "
+          >
+            {{ item.iEven_OneST }}
+          </td>
+          <td
+            @click="
+              showAlert(
+                item.iOdd_OneST,
+                item.iTeam[0].Name,
+                item.iTeam[1].Name,
+                'คู่'
+              )
+            "
+          >
+            {{ item.iOdd_OneST }}
+          </td>
+          <td
+            @click="
+              showAlert(
+                item.iEven_TwoST,
+                item.iTeam[0].Name,
+                item.iTeam[1].Name,
+                'คี่'
+              )
+            "
+          >
+            {{ item.iEven_TwoST }}
+          </td>
+          <td
+            @click="
+              showAlert(
+                item.iOdd_TwoST,
+                item.iTeam[0].Name,
+                item.iTeam[1].Name,
+                'คู่'
+              )
             "
           >
             {{ item.iOdd_TwoST }}
           </td>
-          <td>{{ item.iEven_HomeTeam }}</td>
-          <td>{{ item.iOdd_HomeTeam }}</td>
-          <td>{{ item.iEven_AwayTeam }}</td>
-          <td>{{ item.iOdd_AwayTeam }}</td>
+          <td
+            @click="
+              showAlert(
+                item.iEven_HomeTeam,
+                item.iTeam[0].Name,
+                item.iTeam[1].Name,
+                'คี่'
+              )
+            "
+          >
+            {{ item.iEven_HomeTeam }}
+          </td>
+          <td
+            @click="
+              showAlert(
+                item.iOdd_HomeTeam,
+                item.iTeam[0].Name,
+                item.iTeam[1].Name,
+                'คู่'
+              )
+            "
+          >
+            {{ item.iOdd_HomeTeam }}
+          </td>
+          <td
+            @click="
+              showAlert(
+                item.iEven_AwayTeam,
+                item.iTeam[0].Name,
+                item.iTeam[1].Name,
+                'คี่'
+              )
+            "
+          >
+            {{ item.iEven_AwayTeam }}
+          </td>
+          <td
+            @click="
+              showAlert(
+                item.iOdd_AwayTeam,
+                item.iTeam[0].Name,
+                item.iTeam[1].Name,
+                'คู่'
+              )
+            "
+          >
+            {{ item.iOdd_AwayTeam }}
+          </td>
         </tr>
       </tbody>
     </table>
@@ -74,20 +156,19 @@ export default {
       markets: [],
       itemMarkets: [],
       fixtureid: [],
-      TotalPrice : "",      
+      TotalPrice: "",
     };
   },
   computed: {},
   methods: {
     showAlert(value, TeamH, TeamA, Type) {
       // Use sweetalert2
-      const inputValue = 0    
-      
-      this.$swal
-        .fire({
-          title: TeamH + `<span style='color:red'> VS </span>` + TeamA,
-          text: "sssss",
-          html: `
+      if (value !== undefined && value !== "") {
+        let inputValue = 0;        
+        this.$swal
+          .fire({
+            title: TeamH + `<span style='color:red'> VS </span>` + TeamA,            
+            html: `
           <div class="card">
             <div class="card-body">
               <div class="row">
@@ -105,14 +186,7 @@ export default {
                   <h5 class="card-title">จำนวนเงิน :<input type="number" id="price" v-model="${inputValue}" class="swal2-input" placeholder="">฿</h5>
                 </div>
               </div>
-            </div>
-              <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">ยอดเงินที่รับ : <span style='color:red'> ${inputValue} </span>฿</h5>
-                </div>
-              </div>
-            </div>              
+            </div>                          
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
@@ -130,34 +204,28 @@ export default {
           </div>
             </div>
           </div>`,
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          cancelButtonText : "ยกเลิก",
-          confirmButtonText: "ยืนยันทำรายการ",
-          preConfirm: () => {
-            const price = this.$swal.getPopup().querySelector("#price").value;            
-            if (!price) {
-              this.$swal.showValidationMessage(
-                `Please enter price `
-              );
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            cancelButtonText: "ยกเลิก",
+            confirmButtonText: "ยืนยันทำรายการ",
+            preConfirm: () => {
+              const price = this.$swal.getPopup().querySelector("#price").value;
+              if (!price) {
+                this.$swal.showValidationMessage(`Please enter price `);
+              }
+              return { price: price };
+            },
+          })
+          .then((result) => {
+            if (result.isConfirmed) {
+              this.$swal.fire("Success!", "ทำรายการสำเร็จ", "success");
             }
-            return { price: price };
-          },
-        })
-        .then((result) => {
-          if (result.isConfirmed) {
-            this.$swal.fire(
-              "Success!",
-              "ทำรายการสำเร็จ",
-              "success"
-            );
-          }
-        });
-      // this.$swal();
+          });
+        // this.$swal();
+      }
     },
-    
   },
   async mounted() {
     // Get for loop
