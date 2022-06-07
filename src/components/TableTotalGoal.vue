@@ -236,6 +236,12 @@ export default {
         let id;
         for (let i = 0; i < this.live_scores.length; i++) {
           id = this.live_scores[i].fixture_id;
+          let Time = this.live_scores[i].fixture.StartDate;
+          let StartDate = new Date(Time)          
+          StartDate.setHours(StartDate.getHours() + 7);
+
+          let StartDateT = StartDate.toLocaleString().substring(12);
+          
           // console.log(id);
           axios
             .get(
@@ -248,7 +254,7 @@ export default {
               if (this.markets === null) {
                 cItem = {
                   iID: this.live_scores[i].fixture_id,
-                  iTime: this.live_scores[i].fixture.StartDate,
+                  iTime: StartDateT,
                   iTeam: this.live_scores[i].fixture.Participants,
                 };
                 this.itemMarkets.push(cItem);
@@ -319,7 +325,7 @@ export default {
 
                 cItem = {
                   iID: this.live_scores[i].fixture_id,
-                  iTime: this.live_scores[i].fixture.StartDate,
+                  iTime: StartDateT,
                   iTeam: this.live_scores[i].fixture.Participants,
                   iEven_OneST: One_Even,
                   iOdd_OneST: One_Odd,
