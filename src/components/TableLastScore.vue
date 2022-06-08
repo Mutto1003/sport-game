@@ -6,36 +6,54 @@
           <th rowspan="2">เวลา</th>
           <th rowspan="2">คู่แข่งขัน</th>
           <th colspan="6" class="text-center">เต็มเวลา</th>
-          <th colspan="6" class="text-center">ครึ่งแรก</th>        
+          <th colspan="6" class="text-center">ครึ่งแรก</th>
         </tr>
         <tr>
           <th colspan="2" class="text-center">ประตูแรก</th>
           <th colspan="2" class="text-center">ประตูสุดท้าย</th>
-          <th colspan="2" class="text-center">ไม่มีประตู</th>
+          <th class="text-center">ไม่มีประตู</th>
           <th colspan="2" class="text-center">ประตูแรก</th>
           <th colspan="2" class="text-center">ประตูสุดท้าย</th>
-          <th colspan="2" class="text-center">ไม่มีประตู</th>          
+          <th class="text-center">ไม่มีประตู</th>
         </tr>
       </thead>
       <tbody class="table-hover">
-        <tr v-for="(item, index) in live_scores" :key="index">
-          <td>{{ item.fixture.StartDate }}</td>
+        <tr v-for="(item, index) in itemMarkets" :key="index">
+          <td>{{ item.iTime }}</td>
           <td>
-            {{ item.fixture.Participants[0].Name }} VS
-            {{ item.fixture.Participants[1].Name }}
+            {{ item.iTeam[0].Name }} VS {{ item.iTeam[1].Name }}
           </td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
-          <td>0.5</td>
+          <td></td>
+          <td></td>
+          <td @click="
+              showAlert(
+                item.iHomeTeam_FullTime,
+                item.iTeam[0].Name,
+                item.iTeam[1].Name,
+                'ประตูสุดท้าย ทีมเหย้า'
+              )
+            ">{{item.iHomeTeam_FullTime}}</td>
+          <td @click="
+              showAlert(
+                item.iAwayTeam_FullTime,
+                item.iTeam[0].Name,
+                item.iTeam[1].Name,
+                'ประตูสุดท้าย ที่มเยือน'
+              )
+            ">{{item.iAwayTeam_FullTime}}</td>
+          <td @click="
+              showAlert(
+                item.iNo_Goal_FullTime,
+                item.iTeam[0].Name,
+                item.iTeam[1].Name,
+                'ไม่มีประตู'
+              )
+            ">{{item.iNo_Goal_FullTime}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>          
         </tr>
       </tbody>
     </table>
@@ -70,8 +88,78 @@ export default {
     return {
       live_scores: [],
       markets: [],
+      itemMarkets: [],
       fixtureid: [],
+      TotalPrice: "",
     };
+  },
+  computed: {},
+  methods: {
+    showAlert(value, TeamH, TeamA, Type) {
+      // Use sweetalert2
+      if (value !== undefined && value !== "") {
+        let inputValue = 0;
+        this.$swal
+          .fire({
+            title: TeamH + `<span style='color:red'> VS </span>` + TeamA,
+            html: `
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+              </div>
+              <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">${Type} : <span style='color:red'> ${value} </span>฿</h5>
+                </div>
+              </div>
+            </div> 
+              <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">จำนวนเงิน :<input type="number" id="price" v-model="${inputValue}" class="swal2-input" placeholder="">฿</h5>
+                </div>
+              </div>
+            </div>                          
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">เดิมพันขั้นสูงสุด : <span style='color:red'> 10 </span>฿</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">เดิมพันสูงสุด : <span style='color:red'> 15000 </span>฿</h5>   
+                </div>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            cancelButtonText: "ยกเลิก",
+            confirmButtonText: "ยืนยันทำรายการ",
+            preConfirm: () => {
+              const price = this.$swal.getPopup().querySelector("#price").value;
+              if (!price) {
+                this.$swal.showValidationMessage(`Please enter price `);
+              }
+              return { price: price };
+            },
+          })
+          .then((result) => {
+            if (result.isConfirmed) {
+              this.$swal.fire("Success!", "ทำรายการสำเร็จ", "success");
+            }
+          });
+        // this.$swal();
+      }
+    },
   },
   async mounted() {
     // Get for loop
@@ -79,6 +167,68 @@ export default {
       .get("http://49.0.193.193:8021/api/v1/feed/live_score/list")
       .then((resultTeam) => {
         this.live_scores = resultTeam.data.data.live_scores;
+        let id;
+        for (let i = 0; i < this.live_scores.length; i++) {
+          id = this.live_scores[i].fixture_id;
+          let Time = this.live_scores[i].fixture.StartDate;
+          let StartDate = new Date(Time);
+          StartDate.setHours(StartDate.getHours() + 7);
+
+          let StartDateT = StartDate.toLocaleString().substring(12);
+
+          // console.log(id);
+          axios
+            .get(
+              `http://49.0.193.193:8021/api/v1/feed/live_score/${id}/market/list`
+            )
+            .then((resultM) => {
+              this.markets = resultM.data.data.markets;
+              let Onest, Twost, HomeTeam, AwayTeam;
+              let cItem;
+              if (this.markets === null) {
+                cItem = {
+                  iID: this.live_scores[i].fixture_id,
+                  iTime: StartDateT,
+                  iTeam: this.live_scores[i].fixture.Participants,
+                };
+                this.itemMarkets.push(cItem);
+              } else if (this.markets !== null) {
+                let HomeTeam_FullTime,
+                  AwayTeam_FullTime,
+                  No_Goal_FullTime,                  
+                Onest = this.markets.filter((elem) => {
+                  if (elem.market_id == "56") {
+                    console.log(elem)
+                    return elem;
+                  }
+                });
+                if (Onest[0] == null) {
+                  HomeTeam_FullTime = "";
+                  AwayTeam_FullTime = "";
+                  No_Goal_FullTime = "";
+                } else if (Onest[0] !== null) {
+                  No_Goal_FullTime = Onest[0].bets[0].Price;
+                  HomeTeam_FullTime = Onest[0].bets[1].Price;
+                  AwayTeam_FullTime = Onest[0].bets[2].Price;
+                }
+
+                cItem = {
+                  iID: this.live_scores[i].fixture_id,
+                  iTime: StartDateT,
+                  iTeam: this.live_scores[i].fixture.Participants,
+                  iHomeTeam_FullTime: HomeTeam_FullTime,
+                  iAwayTeam_FullTime: AwayTeam_FullTime,
+                  iNo_Goal_FullTime: No_Goal_FullTime,                  
+                };
+                this.itemMarkets.push(cItem);
+              }
+
+              // this.itemMarkets.push(cItem);
+              // console.log(JSON.stringify(this.markets_onePeriod));
+            });
+          // console.log(JSON.stringify(itemMarkets));
+        }
+        // console.log(JSON.stringify(this.markets));
       });
   },
 };
