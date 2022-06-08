@@ -5,24 +5,16 @@
         <tr>
           <th rowspan="2">เวลา</th>
           <th rowspan="2">คู่แข่งขัน</th>
-          <th colspan="3" class="text-center">FT.1X2</th>
-          <th colspan="3" class="text-center">ครึ่งแรก 1X2</th>
-          <th colspan="3" class="text-center">FT.DC</th>
-          <th colspan="3" class="text-center">ครึ่งแรก สองโอกาส</th>
+          <th colspan="6" class="text-center">เต็มเวลา</th>
+          <th colspan="6" class="text-center">ครึ่งแรก</th>        
         </tr>
         <tr>
-          <th>1</th>
-          <th>X</th>
-          <th>2</th>
-          <th>1</th>
-          <th>X</th>
-          <th>2</th>
-          <th>1X</th>
-          <th>12</th>
-          <th>2X</th>
-          <th>1X</th>
-          <th>12</th>
-          <th>2X</th>
+          <th colspan="2" class="text-center">ประตูแรก</th>
+          <th colspan="2" class="text-center">ประตูสุดท้าย</th>
+          <th colspan="2" class="text-center">ไม่มีประตู</th>
+          <th colspan="2" class="text-center">ประตูแรก</th>
+          <th colspan="2" class="text-center">ประตูสุดท้าย</th>
+          <th colspan="2" class="text-center">ไม่มีประตู</th>          
         </tr>
       </thead>
       <tbody class="table-hover">
@@ -43,7 +35,7 @@
           <td>0.5</td>
           <td>0.5</td>
           <td>0.5</td>
-          <td></td>
+          <td>0.5</td>
         </tr>
       </tbody>
     </table>
