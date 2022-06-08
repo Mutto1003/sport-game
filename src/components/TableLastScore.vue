@@ -5,8 +5,8 @@
         <tr>
           <th rowspan="2">เวลา</th>
           <th rowspan="2">คู่แข่งขัน</th>
-          <th colspan="6" class="text-center">เต็มเวลา</th>
-          <th colspan="6" class="text-center">ครึ่งแรก</th>
+          <th colspan="5" class="text-center">เต็มเวลา</th>
+          <th colspan="5" class="text-center">ครึ่งแรก</th>
         </tr>
         <tr>
           <th colspan="2" class="text-center">ประตูแรก</th>
