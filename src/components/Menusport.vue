@@ -36,6 +36,13 @@
             </div>
             <div class="bsl-title font-t">ทายผลผู้ชนะ</div></a
           >
+          <a @click="add('TLastScore')" class="bsl-link casino"
+            ><div class="bsl-icon">
+              <img src="@/assets/icon-05.png" class="bsli" />
+            </div>
+            <div class="bsl-title font-t">ลูกแรก / ลูกสุดท้าย</div></a
+          >
+          
         </div>
 
         <!-- Button trigger modal -->

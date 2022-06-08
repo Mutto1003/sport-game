@@ -5,7 +5,7 @@ export default createStore({
     NavbarValue: "P",
     component: "Tsport",
     TitleMenufront: "ราคาต่อรอง ",
-    TitleMenuback : "& สูงต่ำ",
+    TitleMenuback: "& สูงต่ำ",
     // count: 'Tsport',
   },
   getters: {
@@ -79,10 +79,15 @@ export default createStore({
           context.commit("aTitleMenufront", "ทายผล");
           context.commit("aTitleMenuback", "ผู้ชนะ");
           break;
+        case "TLastScore":
+          context.commit("add", itemMenu);
+          context.commit("aTitleMenufront", "ลูกแรก / ");
+          context.commit("aTitleMenuback", "ลูกสุดท้าย");
+          break;
         default:
         // code block
       }
-    },    
+    },
   },
   modules: {},
 });

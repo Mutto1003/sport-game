@@ -3,8 +3,8 @@
     <Loading v-if="isLoading"></Loading>
     <HeaderSuccess v-if="isHeader" class="fixed-top" />
     <Carousel class="mtc" />
-    <Poker class="mt-5 mb-5" />    
-    <div class="our-history-title">
+    <!-- <Poker class="mt-5 mb-5" />     -->
+    <div class="our-history-title mt-5">
       <h2 class="font-t">{{$store.getters.getTitleMenufront}}<span>{{$store.getters.getTitleMenuback}}</span></h2>
     </div>
     <ImgAnimation />
@@ -140,6 +140,7 @@ import TableCorners from "@/components/TableCorners.vue";
 import TableScore from "@/components/TableScore.vue";
 import TableTeamWin from "@/components/TableTeamWin.vue";
 import TableTotalGoal from "@/components/TableTotalGoal.vue";
+import TableLastScore from "@/components/TableLastScore.vue";
 import Menusport from "@/components/Menusport.vue";
 import Footer from "@/components/Footer.vue";
 import Poker from "@/components/Poker.vue";
@@ -167,6 +168,7 @@ export default {
     TScore: TableScore,
     Tgoal: TableTotalGoal,
     Twin: TableTeamWin,
+    TLastScore : TableLastScore,
     Menusport,    
     Footer,
   },
